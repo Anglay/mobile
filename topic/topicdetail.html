@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="keywords" content="领络，领络科技，领络律师，互联网+法律，法律工具，律师工具，法律咨询，法律服务，司法，司法考试，司法帮助，律师，协作，律师平台，找律师，法律活动">
+	<meta name="description" content="领络科技，专注于法律行业的互联网科技公司，比法律人更懂互联网，比互联网人更懂法律，为法律人提供最专业、最完善的协同办公解决方案，为需要法律援助的人提供最优的法律资源。">
+	<title>领络律师-话题详情</title>
+	<link rel="shortcut icon" href="../images/logo.ico" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="../plugIn/seajs/sea.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body ms-controller="topicdetailCtrl">
+	<!-- header -->
+	<div ms-controller="headerCtrl">
+		<div id="header">
+			<div class="nav-right">
+				<a href="javascript:void(0)" class="nav-edite" id="nav-edite"></a>
+			</div>
+			<span class="next-title">话题详情</span>
+			<a class="btn_control back" ms-click="back"></a>
+		</div>
+	</div>
+	<!-- header end -->
+	<div class="container pt50 animated fadeIn">
+		<div class="topic-content" >
+			<div class="loading" ms-visible="loading"></div>
+			<div class="topic-wraper hide-box" ms-visible="!loading">
+				<div class="topic-wraper-header">
+					<div>{{obj.title}}</div>
+					<div>
+						<span>{{obj.params_name}}</span>
+						<span class="icon-delete"></span>
+					</div>
+				</div>
+				<div class="topic-wraper-body">
+					<div class="topic-info">
+						<span>
+							<img ms-attr-src="{{imgHost}}{{obj.img}}" ms-if="obj.img!==''">
+							<img src="images/defult.svg" ms-attr-alt="obj.user_name" ms-if="obj.img===''">
+						</span>
+						<span>{{obj.user_name}}</span>
+						<span>{{obj.create_time}}</span>
+						<span>|</span>
+						<span>{{obj.favorite_count}} 收藏</span>
+					</div>
+					<div class="topic-wraper-content">{{obj.content|html}}</div>
+					<div class="topic-img-box" ms-if="files_url.length>0">
+						<img ms-repeat="files_url" ms-attr-src="{{imgHost}}{{el}}">
+					</div>
+					<div class="prise">
+						<div ms-attr-class="obj.isPraise==0?'prise-btn':'prise-btn active'" ms-click="doZan(obj.id,obj.isPraise,2)">
+							<span class="prise-icon"></span>
+							<span>{{obj.praise_count}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="review-num hide-box" ms-visible="totalNum>0">{{totalNum}}条回答</div>
+			<div class="topic-review hide-box" ms-visible="!loading">
+				<textarea ms-duplex="content" placeholder="添加评论..."></textarea>
+				<button ms-click="sendReview(obj.id)">评论</button>
+			</div>
+			<div class="topic-list hide-box" ms-visible="!loading">
+				<div class="topicshowcontent bg-white hide-box" ms-if="list.length>0" ms-visible="list.length>0">
+					<div class="review-item" ms-repeat="list">
+						<div class="review-item-header">
+							<div class="item-header-img">
+								<img ms-attr-src="{{imgHost}}{{el.img}}" ms-if="el.img!==''">
+								<img src="images/defult.svg" ms-attr-alt="el.user_name" ms-if="el.img===''">
+							</div>
+							<div class="item-header-text">
+								<span>{{el.name}}</span>
+								<span>{{el.role_name }}</span>
+								<span>|</span>
+								<span>{{el.create_time}}</span>
+							</div>
+						</div>
+						<div class="review-item-body">
+							<div class="review-rrviewbox" ms-if="el.parent_user_name!=''">
+								<span>回复 </span>
+								<span>{{el.parent_user_name}}</span>
+								<span>：</span>
+							</div>
+							<div>{{el.content}}</div>
+						</div>
+						<div class="review-item-footer">
+							<div class="review-btn-area">
+								<span class="item-footer-text" ms-click="showviewbox(this)"><span>回答</span></span>
+								<span class="item-footer-text" ms-click="doZan(el.id,el.isprise,1)"><span>赞</span> {{el.praise_count}}</span>
+							</div>
+							<div class="r-review-area">
+								<textarea ms-duplex="rcontent"></textarea>
+								<button ms-click="sendRreview(el.id,el.user_id)">评论</button>
+							</div>
+						</div>
+					</div>
+			  	</div>
+			  	<div class="load-more hide-box" ms-click="loadmore" ms-visible="totalpages>1&&pageNo<totalpages">{{loadmorehtml|html}}</div>
+			  	<div class="text-center" ms-if="list.length<=0">没有查找到话题评价</div>
+			</div>
+		</div>
+	</div>
+	<div ms-controller="footerCtrl">
+		<div ms-include-src="footerUrl"></div>
+	</div>
+	<script type="text/javascript">
+		seajs.use('../dist/topic/js/detail.js');
+	</script>
+</body>
+</html>

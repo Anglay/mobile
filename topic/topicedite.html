@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="keywords" content="领络，领络科技，领络律师，互联网+法律，法律工具，律师工具，法律咨询，法律服务，司法，司法考试，司法帮助，律师，协作，律师平台，找律师，法律活动">
+	<meta name="description" content="领络科技，专注于法律行业的互联网科技公司，比法律人更懂互联网，比互联网人更懂法律，为法律人提供最专业、最完善的协同办公解决方案，为需要法律援助的人提供最优的法律资源。">
+	<title>领络律师-发布话题</title>
+	<link rel="shortcut icon" href="../images/logo.ico" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="../plugIn/seajs/sea.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body ms-controller="topicediteCtrl">
+	<!-- header -->
+	<div ms-controller="headerCtrl">
+		<div id="header">
+			<span class="next-title">发布话题</span>
+			<a class="btn_control back" ms-click="back"></a>
+		</div>
+	</div>
+	<!-- header end -->
+	<div class="container pt50 animated fadeIn">
+		<div class="error hide-box" ms-visible="errorMsg!=''">{{errorMsg}}</div>
+		<div class="topic-content">
+			<div class="topic-edite-con">
+				<h2>选择话题分类</h2>
+				<div class="topic-type-box hide-box" ms-visible="typeList.length">
+					<a ms-repeat="typeList" ms-click="doType(this,el.id)">{{el.text}}</a>
+				</div>
+				<div class="form-group">
+					<label><input type="text" ms-duplex="title" placeholder="请输入话题标题"></label>
+					<span class="info hide-box" ms-visible="num!==''">
+						您还可以输入
+						<span class="info-num hide-box" ms-visible="num!==''">{{num}}</span>
+						个字
+					</span>
+				</div>
+				<div class="form-group">
+					<label><textarea type="text" ms-duplex="content" placeholder="请输入您要讨论的话题内容"></textarea></label>
+				</div>
+				<div class="form-group text-center">
+					<button class="btn" ms-click="doSend">发布</button>
+				<div>
+			</div>
+		</div>
+	</div>
+	<div ms-controller="footerCtrl">
+		<div ms-include-src="footerUrl"></div>
+	</div>
+	<script type="text/javascript">
+		seajs.use('../dist/topic/js/edite.js');
+	</script>
+</body>
+</html>

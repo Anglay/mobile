@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>享法科技-实用工具</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="../plug-in/amaze/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../plug-in/avalon/avalon.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="./js/trademarklist.js"></script>
+	<style type="text/css">
+		.am-list-news-default .am-list .am-list-item-desced{
+			border:none;
+			margin-bottom: 10px;
+		}
+		.am-list-news-default .am-list-item-thumb-left .am-list-thumb{
+			max-height: none;
+		}
+		.am-list-news-default .am-list .am-list-item-desced .am-list-item-text{
+			max-height: none;
+			margin-top: 10px;
+		}
+		.am-list-news-default .am-list .am-list-item-desced .am-list-main{
+			padding-left: 5px;
+		}
+	</style>
+</head>
+<body ms-controller="trademarkCtrl">
+	<!-- Header -->
+	<header data-am-widget="header" class="am-header am-header-default" data-am-sticky>
+		<div class="app-hide">
+			<div class="am-header-left am-header-nav">
+				<a href="javascript:LinkLawsCmn.goBack();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+			</div>
+			<h1 class="am-header-title am-animation-fade">查询结果</h1>
+		</div>
+	</header>
+	<center ms-visible="isshow"><img src="image/loading.gif"></center>
+	
+	<!-- container -->
+	<div class="am-margin-top-sm app-hide am-animation-fade" ms-visible="!isshow">
+		<div class="am-list-news am-list-news-default am-no-layout" data-am-widget="list_news">
+			<div class="am-list-news-bd">
+				<ul class="am-list" ms-if="listArr.length>0">
+					<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left" ms-repeat="listArr" ms-click="linkToDetail(el.regNo,el.intCls)">
+						<div class="am-u-sm-4 am-list-thumb">
+							<img ma-attr-alt="el.tmName" ms-attr-src="http://www.tmkoo.com/pic.php?zch={{el.tmImg}}">
+						</div>
+						<div class="am-u-sm-8 am-list-main">
+							<h3 class="am-list-item-hd am-text-default">{{el.tmName}}</h3>
+							<div class="am-list-item-text">
+								<div class="am-g am-margin-bottom-xs">
+									<div class="am-u-sm-4">注册号</div>
+									<div class="am-u-sm-8">{{el.regNo}}</div>
+								</div>
+								<div class="am-g am-margin-bottom-xs">
+									<div class="am-u-sm-4">商标类别</div>
+									<div class="am-u-sm-8">第{{el.intCls}}类</div>
+								</div>
+								<div class="am-g am-margin-bottom-xs">
+									<div class="am-u-sm-4">申请人</div>
+									<div class="am-u-sm-8">{{el.applicantCn}}</div>
+								</div>
+								<div class="am-g am-margin-bottom-xs">
+									<div class="am-u-sm-4">法律状态</div>
+									<div class="am-u-sm-8">{{el.currentStatus}}</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<button ms-if="totalpages>1&&pageNo<totalpages" ms-click="loadData" class="am-btn am-btn-default am-btn-block am-margin-bottom load-btn">{{loadtext|html}}</button>
+			</div>
+		</div>
+		
+		<div class="am-container am-text-center margintop5" ms-if="totalpages<=0" style="color:#a2a2a2;">未搜索到相关信息</div>
+	</div>
+</body>
+</html>

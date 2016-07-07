@@ -1,0 +1,103 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>实用工具</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="../plug-in/avalon/avalon.js"></script>
+	<script src="../plug-in/amaze/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="./js/promisesearch.js"></script>
+	<style type="text/css">
+		ul, li {
+		    list-style:none;
+		}
+		.div-select{
+			position: relative;
+			background-color: #fff;
+			height: 3rem;
+			border-radius:3px;
+		}
+		.div-select cite {
+		    background: url("image/xjt.png") no-repeat right center;
+		    /* border:1px solid #40d16d; */
+		    color: #333333;
+		    cursor: pointer;
+		    display: block;
+		    font-style: normal;
+		    height: 3rem;
+		    line-height: 3rem;
+		    padding-left: 5px;
+		    padding-right: 25px;
+		}
+		.div-select ul {
+			display: none;
+		    background-color: #ffffff;
+		    border-top: 1px solid #40d16d;
+		    margin-top: -1px;
+		    position: absolute;
+		    width: 100%;
+		    z-index: 20000;
+		    padding-left: 5px;
+		    left:-5px;
+		}
+		.div-select ul li {
+		    height: 3rem;
+		    line-height: 3rem;
+		    padding-left: 10px;
+		    padding-right: 10px;
+		    color: #333333;
+		    
+		}
+		.app-hide{display:none;}
+	</style>
+</head>
+<body class="htmlbody" ms-controller="promiseCtrl">
+	<header class="am-header am-header-default">
+		<div class="am-header-left am-header-nav">
+			<a href="javascript:LinkLawsCmn.goBack();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+		</div>
+		<h1 class="am-header-title">失信人查询</h1>
+	</header>
+	<div ms-visible="error" class="am-animation-fade"><button class='am-btn am-btn-danger am-btn-block'>{{error}}</button></div>
+
+	<div class="am-container">
+		<div class="am-container am-margin-top am-margin-bottom am-animation-fade">
+			<div class="am-g am-radius" style="background:#fff;">
+				<div class="am-u-sm-4">
+					<div class="div-select">
+						<cite class="app-hide" ms-click="swichCheck" ms-visible="itemHtml!=''">{{itemHtml}}</cite>
+						<ul>
+					        <li ms-click="check(0,'person')">个人</li>
+					        <li ms-click="check(1,'company')">企业</a></li>
+					    </ul>
+					</div>
+				</div>
+				<div class="am-u-sm-8">
+					<div class="am-input-group app-search">
+						<input type="text" ms-attr-placeholder="pnameHtml" ms-duplex="name" class="am-form-field">
+					</div>
+				</div>
+			</div>
+			<div class="am-g am-radius am-margin-top" style="background:#fff;">
+				<div class="am-u-sm-12">
+					<div class="am-input-group app-search">
+						<input type="text" ms-attr-placeholder="pidHtml" ms-duplex="cardno" class="am-form-field">
+					</div>
+				</div>
+			</div>
+			<button ms-click="search" class="am-btn am-btn-default am-btn-block am-margin-top">查询</button>
+		</div>
+	</div>
+</body>
+</html>

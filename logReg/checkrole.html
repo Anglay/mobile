@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="keywords" content="领络，领络科技，领络律师，互联网+法律，法律工具，律师工具，法律咨询，法律服务，司法，司法考试，司法帮助，律师，协作，律师平台，找律师，法律活动">
+	<meta name="description" content="领络科技，专注于法律行业的互联网科技公司，比法律人更懂互联网，比互联网人更懂法律，为法律人提供最专业、最完善的协同办公解决方案，为需要法律援助的人提供最优的法律资源。">
+	<title>领络律师-角色选择</title>
+	<link rel="shortcut icon" href="../images/logo.ico" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="../plugIn/seajs/sea.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body>
+	<div class="container animated fadeIn">
+		<div class="topbanner">
+            <div class="poswrap">
+                <div class="poswraplogo"></div>
+            </div>
+        </div>
+        <div class="container" ms-controller="checkRoleCtrl">
+            <div ms-repeat-elm="rols">
+                <h3 class="title font16 blackcolor lawerroletitle">{{elm.type}}</h3>
+                <div class="rolebox">
+                    <ul class="lawerlist">
+                        <li ms-repeat-elms="elm.list">
+                            <a ms-click="doCheckType(elms.id)" ms-mouseenter="doHover(elms.title)">
+                                <div ms-attr-class="elms.class"></div>
+                                <span class="title font16 blackcolor">{{elms.text}}</span>
+                                <i ms-visible="checkType==elms.id"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="center-form">
+                <p class="title font16 blackcolor mb40 hidemobile" ms-visible="roleNote!=''">{{roleNote}}</p>
+                <p class="title font16 mb40 basecolor">{{errorinfo}}</p>
+                <button class="form-login-btn buttonclick" type="button" ms-click="gotoRegister">确定</button>
+            </div>
+        </div>
+	</div>
+	<script type="text/javascript">
+		seajs.use('../dist/logReg/js/checkrole.js');
+	</script>
+</body>
+</html>

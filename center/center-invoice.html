@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="keywords" content="领络，领络科技，领络律师，互联网+法律，法律工具，律师工具，法律咨询，法律服务，司法，司法考试，司法帮助，律师，协作，律师平台，找律师，法律活动">
+	<meta name="description" content="领络科技，专注于法律行业的互联网科技公司，比法律人更懂互联网，比互联网人更懂法律，为法律人提供最专业、最完善的协同办公解决方案，为需要法律援助的人提供最优的法律资源。">
+	<title>领络律师-我的发票</title>
+	<link rel="shortcut icon" href="../images/logo.ico" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="../plugIn/seajs/sea.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body ms-controller="invoiceCtrl">
+	<!-- header -->
+	<div ms-controller="headerCtrl">
+		<div id="header">
+			<div class="nav-right">
+				<a href="javascript:void(0)" class="nav-edite" id="nav-edite"></a>
+			</div>
+			<span class="next-title">我的发票</span>
+			<a class="btn_control back" ms-click="back"></a>
+		</div>
+	</div>
+	<!-- header end -->
+	<div class="container pt50 animated fadeIn">
+		<div class="loading" ms-visible="loading"></div>
+		<div class="center-content hide-box" ms-visible="!loading">
+			<div class="center-invoice invoice-detail">
+			 	<p><span>可申请发票订单：</span><span class="text-active">{{baseData.count}}</span><span>个</span></p>
+			 	<p><span>可申请发票金额：</span><span class="text-active">￥ {{baseData.sum}}</span><span>元</span></p>
+			 	<div ms-if="baseData.sum>0">
+			 		<a class="item-btn right" href="center-invoice-apply.html">
+						<span>申请发票</span>
+					</a>
+				</div>
+			</div>
+			<div class="center-invoice invoice-list">
+				<div class="invoice-list-title">我的发票</div>
+				<ul ms-if="list.length>0">
+					<li ms-repeat="list">
+						<div class="invoice-item">
+							<span>发票金额：</span>
+							<div>人民币{{el.amounts}}元</div>
+						</div>
+						<div class="invoice-item">
+							<span>发生时间：</span>
+							<div>{{el.create_time}}</div>
+						</div>
+						<div class="invoice-item">
+							<span>发票抬头：</span>
+							<div>{{el.title}}</div>
+						</div>
+						<div class="invoice-item">
+							<span>邮寄方式：</span>
+							<div>快递</div>
+						</div>
+						<div class="invoice-item">
+							<span>状态：</span>
+							<div>{{el.status_name}}</div>
+						</div>
+						<div class="invoice-item">
+							<a ms-attr-href="center-invoice-detail.html?id={{el.id}}" class="text-active right">查看详情</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="invoice-tips">
+				<p>提示：</p>
+				<p>1、订单服务完成后，根据发票申请，开具发票并递送，发票一经开具，不再支持退款；</p>
+				<p>2、下单成功至订单服务完成90天之内，可申请发票，超出后不再支持申请发票；</p>
+				<p>3、这里的“申请发票”暂只支持2016年2月24日之后的订单，之前的订单如需发票请拨打客服电话，会为您线下开具；</p>
+			</div>
+		</div>
+	</div>
+	<div ms-controller="footerCtrl">
+		<div ms-include-src="footerUrl"></div>
+	</div>
+	<script type="text/javascript">
+		seajs.use('../dist/center/js/centerinvoice.js');
+	</script>
+</body>
+</html>

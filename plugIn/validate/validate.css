@@ -1,0 +1,120 @@
+i.box-success-text, i.box-error-text, i.box-null-text{
+	
+}
+
+i.box-success-text, .box-success-text{
+	color:#080;
+	float:left;
+	position: absolute;
+	line-height: 20px;
+	margin:0;
+	margin-bottom: 8px;
+	right: 0;
+
+}
+
+.input-icon.right > i.box-success-text {
+	right: 0;
+	left : 20px;
+}
+
+.input-icon.right > i.box-error-text {
+	right: 0;
+	left : 20px;
+}
+
+.input-icon.right > i.box-null-text {
+	right: 0;
+	left : 20px;
+}
+
+.input-icon.right > i {
+	float: right;
+}
+
+.input-icon i.box-success-text, .input-icon i.box-error-text, .input-icon i.box-null-text {
+	float:left;
+}
+
+i.box-error-text, .box-error-text{
+	color:#d64635;
+	float:left;
+	position: absolute;
+	line-height: 20px;
+	margin:0;
+	margin-bottom: 8px;
+	right: 0;
+	left : 20px;
+}
+
+i.box-error-text, i.box-error-text{
+	color:#d64635;
+	float:left;
+	position: absolute;
+	line-height: 20px;
+	margin:0;
+	margin-bottom: 8px;
+	right: 0;
+	left : 20px;
+	margin-bottom: 2px;
+}
+
+i.whiteColor{
+	color: #fff;
+}
+
+i.box-null-text, .box-null-text,i.box-success-text, .box-success-text,i.box-error-text, .box-error-text{
+	float:left;
+	position: absolute;
+	line-height: 12px;
+	margin:0;
+	margin-bottom: 8px;
+	right: 0;
+	left : 20px;
+	margin-bottom: 2px;
+}
+
+i.box-null-text, .box-null-text{
+	color: #dfba49;
+}
+	
+
+.box-null-text,.box-error-text{
+
+	left : 25px;
+}
+
+.box-success-text{
+	left: 34px;	
+}
+
+i.box-error-text, .box-error-text{
+	left: 35px;
+}
+
+/* .input-icon.right{
+	float:right;
+	right:8px;
+	display: inline-block;
+	font-size: 16px;
+	height: 16px;
+	margin: 11px 2px 4px 10px;
+	position: absolute;
+	text-align: center;
+	wisth: 16px;
+	z-index: 3;
+} */
+
+.input-medium{
+	width: 100% !important;
+}
+
+label.error{
+	color: #d64635;
+}
+
+input.error{
+	border : 1px solid #d64635;
+}
+
+ 

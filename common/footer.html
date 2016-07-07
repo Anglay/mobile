@@ -1,0 +1,32 @@
+<div class="footer" ms-controller="footerCtrl">
+	<div class="content bg-grap2">
+		<div class="footer-nav">
+			<dl>
+				<dt>关于我们</dt>
+				<dd ms-repeat="footerList.list1"><a ms-href="{{el.linkto}}">{{el.text}}</a></dd>
+			</dl>
+			<dl>
+				<dt>领络律师</dt>
+				<dd ms-repeat="footerList.list2"><a ms-href="{{el.linkto}}">{{el.text}}</a></dd>
+			</dl>
+		</div>
+		<div class="footer-nav">
+			<dl>
+				<dt>律所联盟</dt>
+				<dd ms-repeat="footerList.list3"><a ms-href="{{el.linkto}}">{{el.text}}</a></dd>
+			</dl>
+		</div>
+	</div>
+	<div class="content bg-grap3">
+		<div class="footer-info">
+			<p>{{copyright|html}}</p>
+			<div class="text-center">
+				{{sns|html}}
+			</div>
+		</div>
+	</div>
+	<div class="weixinLayer">
+		<a class="close-btn" ms-click="hideweixinlayer"></a>
+		<div class="weixin"></div>
+	</div>
+</div>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="keywords" content="领络，领络科技，领络律师，互联网+法律，法律工具，律师工具，法律咨询，法律服务，司法，司法考试，司法帮助，律师，协作，律师平台，找律师，法律活动">
+	<meta name="description" content="领络科技，专注于法律行业的互联网科技公司，比法律人更懂互联网，比互联网人更懂法律，为法律人提供最专业、最完善的协同办公解决方案，为需要法律援助的人提供最优的法律资源。">
+	<title>领络律师-加入我们</title>
+	<link rel="shortcut icon" href="../images/logo.ico" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="../plugIn/seajs/sea.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body ms-controller="joinCtrl">
+	<!-- header -->
+	<div ms-controller="headerCtrl">
+		<div id="header">
+			<div class="nav-right">
+				<a href="javascript:void(0)" class="nav-edite" id="nav-edite"></a>
+			</div>
+			<span class="next-title">加入我们</span>
+			<a class="btn_control back" ms-click="back"></a>
+		</div>
+	</div>
+	<!-- header end -->
+	<div class="container pt50 animated fadeIn">
+		<div class="banner"></div>
+		<div class="join-con">
+			<h1>领络故事</h1>
+			<div class="wraper">
+				<ul>
+					<li ms-click="checkItem(0)"><a><span>企业文化</span></a></li>
+					<li ms-click="checkItem(1)"><a><span>员工福利</span></a></li>
+					<li ms-click="checkItem(2)"><a><span>职业发展</span></a></li>
+				</ul>
+			</div>
+			<div class="wraper-con">
+				<div>
+					<h2>公司价值观：专业、协作、高效、极致。</h2>
+					<p>简单：开放、平等的工作环境，用最效率的方法解决问题；</p>
+					<p>专业：比专业知识更重要的，是专业的态度；</p>
+					<p>团队：各司其职，尽力而为，就是对团队最好的承诺；</p>
+					<p>有爱：是工作中的狂人，也是生活中的乐活族。</p>
+				</div>
+				<div>
+					<h2>福利：五险一金、全勤奖、餐补、通信补助、电脑补助、下午茶。</h2>
+					<p>根据员工的能力，为员工提供行业富有竞争力的薪资、奖金；</p>
+					<p>根据员工的年度绩效，提供不同档次的年终奖金，优秀员工奖金更丰厚；</p>
+					<p>工作表现突出的员工，可获得股权认购资格；</p>
+					<p>年度表现优秀者，可享受公司的在职期权分红奖励。</p>
+				</div>
+				<div>
+					<h2>管理通道：</h2>
+					<p>初入职者>有经验者>基层管理层>中层管理层>高层管理者 </p>
+					<h2>非管理通道：</h2>
+					<p>初入职者>有经验者>骨干>专家>资深专家>权威</p>
+				</div>
+			</div>
+		</div>
+		<div class="join-con">
+			<h2 class="sectionnavtitle basefont">我们需要这样的您</h2>
+			<p class="sectiondec">
+			 	有梦想，但绝不浮躁；有冲劲，却沉得住气；有想法，且专业过硬；有个性，能凝心聚力。 青春、朝气、积极、活力，我们年轻向前，我们为自己代言。
+			</p>
+			<p class="sectiondecinfo"><span>简历发送至</span><span>hr@linklaws.com</span></p>
+			<h2 class="sectionnavtitle">招聘职位</h2>
+			<div class="loading" ms-visible="list.length<0"></div>
+			<div class="jobaccordion hide-box" ms-visible="list.length>0">
+				<div class="jobgroup" ms-repeat="list">
+					<a class="jobitem" ms-click="linksidemenu(this)">
+						<span>{{el.jobposition}}</span>
+						<span>{{el.jobsalary}}</span>
+						<span class="joblasticon">
+							<i class="jobicons jobhover"></i>
+						</span>
+					</a>
+					<div class="jobdeail jobdeailshow">
+			 	   		<div class="jobdeailcontent">{{el.jobdeail|html}}</div>
+			 	   </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ms-controller="footerCtrl">
+		<div ms-include-src="footerUrl"></div>
+	</div>
+	<script type="text/javascript">
+		seajs.use('../dist/join/js/init.js');
+	</script>
+</body>
+</html>

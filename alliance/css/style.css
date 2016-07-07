@@ -1,0 +1,224 @@
+@charset "utf-8";
+.banner{
+	height: 250px;
+    padding-top: 150px;
+	background: url("../images/banner.jpg") no-repeat scroll center center / 100% 100%;
+	text-align: center;
+}
+.banner img{
+	display: block;
+	width: 60%;
+	margin: 0 auto 60px;
+}
+.link-btn{
+	display: inline-block;
+    padding: 0 20px;
+    font-size: 16px;
+    height: 35px;
+    line-height: 33px;
+}
+.link-btn, .link-btn:hover, .link-btn:visited, .link-btn:active{
+	background: #21b851 none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.alliance-con-one{
+	padding: 30px 0;
+}
+.alliance-con-one div{
+	height: auto;
+	overflow: hidden;
+	text-align: center;
+}
+.alliance-con-one div span{
+	background: url("../images/itembg.png") no-repeat scroll center center / contain ;
+    color: #21b850;
+    display: inline-block;
+    font-size: 20px;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    width: 110px;
+}
+.alliance-con-one div p{
+	padding:20px 10px;
+	text-align: left;
+}
+.alliance-con-two{
+	background: url("../images/conbg.png") no-repeat scroll 0 0 / 100% 100%;
+	height: auto;
+    overflow: hidden;
+}
+.alliance-nav,.nav-bar{
+    display: block;
+    height: auto;
+    overflow: hidden;
+    padding: 0 5px;
+}
+.alliance-nav-pager {
+  padding-left: 0;
+  margin: 25px 0 20px;
+  list-style: none;
+  text-align: center;
+}
+.alliance-nav-pager li {
+  display: inline-block;
+}
+.alliance-nav-pager li > a{
+  display: inline-block;
+  padding: 15px;
+}
+.alliance-nav-pager li > a div{
+    -webkit-transition: all 800ms linear 0s;
+    -moz-transition: all 800ms linear 0s;
+    transition: all 800ms linear 0s;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+.alliance-nav-pager li > a div.tip1{
+	background: url(../images/imgbg-01.png) no-repeat center center;
+	background-size: cover;
+}
+.alliance-nav-pager li > a div.tip2{
+	background: url(../images/imgbg-02.png) no-repeat center center;
+	background-size: cover;
+}
+.alliance-nav-pager li > a div.tip3{
+	background: url(../images/imgbg-03.png) no-repeat center center;
+	background-size: cover;
+}
+.alliance-nav-pager li > a div.tip4{
+	background: url(../images/imgbg-04.png) no-repeat center center;
+	background-size: cover;
+}
+.alliance-nav-pager li > a div.tip5{
+	background: url(../images/imgbg-05.png) no-repeat center center;
+	background-size: cover;
+}
+.alliance-nav-pager li > a:hover div{
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+.alliance-nav-pager li > a:hover div.tip1{
+	background: url(../images/imgbg-11.png) no-repeat center center;
+	background-size: cover;
+}
+.alliance-nav-pager li > a:hover div.tip2{
+	background: url(../images/imgbg-12.png) no-repeat center center;
+	background-size: cover;
+}
+.alliance-nav-pager li > a:hover div.tip3{
+	background: url(../images/imgbg-13.png) no-repeat center center;
+	background-size: cover;
+}
+.alliance-nav-pager li > a:hover div.tip4{
+	background: url(../images/imgbg-14.png) no-repeat center center;
+	background-size: cover;
+}
+.alliance-nav-pager li > a:hover div.tip5{
+	background: url(../images/imgbg-15.png) no-repeat center center;
+	background-size: cover;
+}
+.alliance-nav-pager li > a span{
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+}
+.alliance-nav-pager li > a:hover,
+.alliance-nav-pager li > a:focus {
+  text-decoration: none;
+}
+
+.alliance-con-three{
+	padding: 30px 0;
+	height: auto;
+	overflow: hidden;
+}
+.alliance-con-three h1{
+	font-size: 21px;
+	margin: 0 15px 20px;
+	text-align: center;
+	padding: 0 0 20px;
+	border-bottom: 1px solid #a2a2a2;
+}
+.nav-bar{padding:0 10px;}
+.nav-bar .nav-bar-item{
+	padding-left: 0;
+	margin: 0 0 20px;
+	list-style: none;
+	text-align: center;
+}
+.nav-bar-item li {
+	display: inline;
+    font-size: 14px;
+    line-height: 24px;
+}
+.nav-bar-item li > a{
+  display: inline-block;
+  border-radius: 20px;
+  padding: 4px 18px;
+}
+.nav-bar-item li.active a{
+    border: 1px solid #21b850;
+    color: #21b850;
+}
+.listcontent{
+	height: auto;
+	overflow: hidden;
+	min-height: 300px;
+	padding: 5px 10px;
+}
+.alliance-con-three .alliance-item{
+	margin-bottom: 25px;
+}
+.alliance-con-three .con-three{
+	background: #f2f2f2 none repeat scroll 0 0;
+    cursor: pointer;
+    display: inline-block;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.alliance-con-three .con-three img{
+	height: 100%;
+    margin-top: 0;
+    width: auto;
+}
+.alliance-con-three .con-three .con-three-layer{
+ 	background: rgba(0, 0, 0, 0) url("../images/opc.png") repeat scroll 0 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 250px;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+	padding: 36px 8%;
+	text-align: left;
+}
+.alliance-con-three .con-three .con-three-layer h2{
+	color: #fff;
+    font-size: 20px;
+    margin: 0 0 50px;
+}
+.alliance-con-three .con-three .con-three-layer label{
+	color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    display: block;
+}
+.alliance-con-three .con-three:hover .con-three-layer {
+    top: 0;
+    /* transition: all 0.7s ease 0s; */
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}

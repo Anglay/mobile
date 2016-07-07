@@ -1,0 +1,54 @@
+@charset 'utf-8';
+.banner{
+    height: 250px;
+    padding-top: 150px;
+    background: url("../images/banner.jpg") no-repeat scroll center center / 100% 100%;
+    text-align: center;
+}
+.team-con{
+	height: auto;
+	overflow: hidden;
+	padding: 50px 15px;
+	background: #fff;
+}
+.team-con p{
+	text-align: center;
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+.link-btn,.link-btn:active,.link-btn:visited{
+	background: #21b84f;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    padding: 5px 30px;
+    text-align: center;
+    text-transform: none;
+    transition: all 0.3s ease 0s;
+}
+.link-btn:hover {
+    background: #3dcc6d;
+    color: #fff;
+}
+.teamgroup{
+	height: auto;
+	overflow: hidden;
+}
+.teamgroup .teamitem{
+	height: auto;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.teamgroup .teamitem .teampersonimg{
+	background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 270px;
+    margin: 0 auto;
+    width: 200px;
+}
+.teamgroup .teamitem:hover .teampersonimg {
+    background-position: 0 -270px;
+}

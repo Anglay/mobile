@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="keywords" content="领络，领络科技，领络律师，互联网+法律，法律工具，律师工具，法律咨询，法律服务，司法，司法考试，司法帮助，律师，协作，律师平台，找律师，法律活动">
+	<meta name="description" content="领络科技，专注于法律行业的互联网科技公司，比法律人更懂互联网，比互联网人更懂法律，为法律人提供最专业、最完善的协同办公解决方案，为需要法律援助的人提供最优的法律资源。">
+	<title>领络律师-法律服务</title>
+	<link rel="shortcut icon" href="../images/logo.ico" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="../plugIn/seajs/sea.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body ms-controller="serviceCtrl">
+	<!-- header -->
+	<div ms-controller="headerCtrl">
+		<div id="header">
+			<div class="nav-right">
+				<a href="javascript:void(0)" class="nav-user"><i></i></a>
+			</div>
+			<span>法律服务</span>
+			<a class="btn_control open" href="javascript:void(0);"></a>
+			<div class="nav" ms-include-src="headerUrl"></div>
+		</div>
+	</div>
+	<!-- header end -->
+	<div class="service-item-bar">
+		<div class="item-list animated fadeIn hide-box" ms-if="serviceNavList.length>0" ms-visible="serviceNavList.length>0">
+			<a ms-repeat="serviceNavList" ms-attr-href="service-{{el.alias}}.html?id={{el.id}}" ms-attr-class="el.alias==serviceType?'active':''">
+				<span>{{el.name}}</span>
+			</a>
+		</div>
+	</div>
+	<div class="container pt95 animated fadeIn">
+		<div class="error animated fadeIn hide-box" ms-visible="errorMsg!=''">{{errorMsg}}</div>
+		<div class="service-content">
+			<div class="service-calls">
+				<p>约定好时间、地点，即可与附近的优质律师一对一当面沟通，获得更全面细致的法律指导，众多问题一次解决。平台律师均经过双重认证，服务质量有保障。</p>
+				<div class="service-form-item">
+					<label for=""><input type="text" id="ording-date" placeholder="预定时间" readonly="readonly" ms-duplex="time"></label>
+					<label for=""><input type="text" id="ording-city" placeholder="预定城市" readonly="readonly" ms-click="showCityLayer"></label>
+				</div>
+				<div class="service-form-item">
+					<textarea placeholder="简要描述您的困惑" ms-duplex="discription"></textarea>
+				</div>
+				<div class="service-form-item animated fadeIn hide-box" ms-visible="detail.univalence!=''">
+					<span><a>{{detail.univalence}}</a>元/{{detail.quantity}}小时</span>
+					<button class="right btn-service" ms-click="doAdvice">立即咨询</button>
+				</div>
+			</div>
+			<div class="service-info animated fadeIn hide-box" ms-visible="detail.descr!=''">
+				<div class="service-info-item">
+					<div class="info-item-left">费用说明</div>
+					<div class="info-item-right">
+						{{detail.descr|html}}
+					</div>
+				</div>
+				<div class="service-info-item">
+					<div class="info-item-left">服务效率</div>
+					<div class="info-item-right">5分钟以内律师主动回电，与您电话沟通。</div>
+				</div>
+				<div class="service-info-item">
+					<div class="info-item-left">有谁服务</div>
+					<div class="info-item-right">平台律师均经过实名认证和执业认证，并进行精准的领域划分，请放心咨询。</div>
+				</div>
+			</div>
+		</div>
+		<div ms-include-src="tempUrl"></div>
+	</div>
+	<div class="city-layer" id="cityLayer">
+		<div class="city-layer-header">
+			<a class="icon-back" ms-click="hideCityLayer"></a>
+		</div>
+		<div class="city-layer-body">
+			<div class="city-layer-prov animated fadeIn hide-box" ms-if="provList.length>0" ms-visible="provList.length>0">
+				<div>
+					<a ms-repeat="provList" ms-click="checkProv(this,el.province_id,el.name)" ms-attr-class="$index==0?'active':''">{{el.name}}</a>
+				</div>
+			</div>
+			<div class="city-layer-city animated fadeIn hide-box" ms-if="cityList.length>0" ms-visible="cityList.length>0">
+				<div>
+					<a ms-repeat="cityList" ms-click="checkCity(this,el.city_id,el.name)">{{el.name}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ms-controller="footerCtrl">
+		<div ms-include-src="footerUrl"></div>
+	</div>
+	<script type="text/javascript">
+		seajs.use('../dist/service/js/service3.js');
+	</script>
+</body>
+</html>

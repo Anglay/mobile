@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>找律师</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<script src="../plug-in/jquery/jquery.min.js"></script> 
+	<script src="../plug-in/avalon/avalon.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body ms-controller="searchCtrl">
+  	<header class="am-header am-header-default serarch-header">
+		<div class="am-header-left am-header-nav">
+			<a href="javascript:LinkLawsCmn.goBack();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+		</div>
+		<h1 class="am-header-title">
+			<input type="text" class="am-form-field am-round" placeholder="请输入律师姓名搜索"/>
+		</h1>
+		<div class="am-header-right am-header-nav">
+			<a class="am-text-default">搜索</a>
+		</div>
+	</header>
+	<script type="text/javascript">
+		var searchModel = avalon.define("searchCtrl",function(vm){
+
+		});
+	</script>
+</body>
+</html>

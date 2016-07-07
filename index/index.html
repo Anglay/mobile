@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="keywords" content="领络，领络科技，领络律师，互联网+法律，法律工具，律师工具，法律咨询，法律服务，司法，司法考试，司法帮助，律师，协作，律师平台，找律师，法律活动">
+	<meta name="description" content="领络科技，专注于法律行业的互联网科技公司，比法律人更懂互联网，比互联网人更懂法律，为法律人提供最专业、最完善的协同办公解决方案，为需要法律援助的人提供最优的法律资源。">
+	<title>领络律师</title>
+	<link rel="shortcut icon" href="../images/logo.ico" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="../plugIn/seajs/sea.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body>
+	<!-- header -->
+	<div ms-controller="headerCtrl">
+		<div id="header">
+			<div class="nav-right">
+				<a href="javascript:void(0)" class="nav-user"><i></i></a>
+			</div>
+			<a class="btn_control open" href="javascript:void(0);"></a>
+			<div class="nav" ms-include-src="headerUrl"></div>
+		</div>
+	</div>
+	<!-- header end -->
+	<div class="container pt50 animated fadeIn">
+		<div class="banner">
+			<div class="swiper-container" id="swiper-container1">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="slide1"></div>
+					</div>
+					<div class="swiper-slide">
+						<div class="slide2"></div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+
+		<div class="content pt20 bg-white" ms-controller="serviceCtrl">
+			<div class="loading" ms-visible="!isShow"></div>
+			<div class="index-service animated fadeIn hide-box" ms-visible="isShow">
+				<ul class="service-list">
+					<li class="service-item service-item-1" ms-click="serviceInit(this)"><span>电话咨询</span></li>
+					<li class="service-item-2" ms-click="serviceInit(this)"><span>免费咨询</span></li>
+					<li class="service-item-3" ms-click="serviceInit(this)"><span>合同文书</span></li>
+					<li class="service-item-4" ms-click="serviceInit(this)"><span>律师上门</span></li>
+					<li class="service-item-5" ms-click="serviceInit(this)"><span>案件委托</span></li>
+				</ul>
+				<div class="service-form">
+					<input type="text" ms-duplex="discription" placeholder="请简要描述您的问题"/>
+				</div>
+				<span class="error animated fadeIn hide-box" ms-visible="errorMsg!=''">{{errorMsg}}</span>
+				<div class="service-info">
+					<p>费用说明：￥{{detail.univalence}}元/{{detail.quantity}}{{detail.unit}}</p>
+					<p>{{detail.descr}}</p>
+					<button class="btn link-btn" ms-click="doOrder">立即咨询</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="content pt20 bg-white">
+			<div class="serviceitems">
+				<div>
+					<a href="javascript:void(0);">
+						<div class="service-icon">
+							<img src="images/icon-service-1.png" alt="">
+						</div>
+						<label>电话咨询</label>
+					</a>
+				</div>
+				<div>
+					<a href="javascript:void(0);">
+						<div class="service-icon">
+							<img src="images/icon-service-2.png" alt="">
+						</div>
+						<label>合同定制</label>
+					</a>
+				</div>
+				<div>
+					<a href="javascript:void(0);">
+						<div class="service-icon">
+							<img src="images/icon-service-3.png" alt="">
+						</div>
+						<label>预约上门</label>
+					</a>
+				</div>
+				<div>
+					<a href="javascript:void(0);">
+						<div class="service-icon">
+							<img src="images/icon-service-4.png" alt="">
+						</div>
+						<label>委托诉讼</label>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="content pt20 pb40 text-center bg-white" ms-controller="lawerCtrl">
+			<h2 class="lm-title hide-box" ms-visible="isShow">明星律师</h2>
+			<div class="loading" ms-visible="!isShow"></div>
+			<div class="swiper-container mb15 hide-box" id="swiper-container2" ms-visible="isShow">
+				<div class="swiper-wrapper" ms-if="list.length>0" ms-visible="list.length>0">
+					<div class="swiper-slide" ms-repeat="list">
+						<a class="slide-lawer" ms-attr-href="../lawyer/lawyerdeail.html?lawerId={{el.id}}">
+							<div class="lawer-phone">
+								<img ms-attr-src="{{imgHost}}{{el.img}}" width="100%" alt="">
+							</div>
+							<h3 class="l-name">{{el.name}}</h3>
+							<p><span>{{eduction[el.eduction]}}</span><span>职业{{el.working_year}}年</span></p>
+							<p>
+								<span>{{el.major_name}}</span>
+								<span ms-if="el.major_name!=''&&el.vocation_name!=''">/</span>
+								<span>{{el.vocation_name}}</span>
+							</p>
+							<p><span>{{el.law_firm}}</span></p>
+						</a>
+					</div>
+				</div>
+				<div class="swiper-button-prev"></div>
+    			<div class="swiper-button-next"></div>
+			</div>
+			<a class="link hide-box" href="../lawyer/index.html" ms-visible="isShow">查看更多优质律师</a>
+		</div>
+		<div class="content animated fadeIn" ms-controller="toolsCtrl">
+			<div class="loading" ms-visible="!isShow"></div>
+			<ul class="tool-list hide-box" ms-visible="isShow">
+				<li class="tool-max-icon" ms-repeat="toolList.list1">
+					<a ms-attr-class="el.style" ms-href="el.linkto"><span></span><label>{{el.text}}</label></a>
+				</li>
+				<li class="tool-min-icon" ms-repeat="toolList.list2">
+					<a ms-attr-class="el.style" ms-href="el.linkto"><span></span><label>{{el.text}}</label></a>
+				</li>
+			</ul>
+		</div>
+		<!-- <div class="content bg-white pt40 text-center">
+			<div class="logo-box">
+				<img width="100%" src="images/icon-logo.png" alt="领络律师">
+			</div>
+			<p class="intro-text mt30">领络律师以提高法律人工作效率为起点，通过找律师、活动、提问、实用工具等多个功能板块实现法律工作的专业、高效、互通。它是由资深法律人全程参与设计，专业互联网人士提供技术支持，针对法律人量身定做的一款聚合型办公应用平台。</p>
+			<div class="p-box mt40">
+				<img width="100%" src="images/icon-p.png" alt="领络律师">
+			</div>
+			<a class="btn link-btn" href="../down/index.html">下载APP</a>
+		</div>
+		<div class="content bg-grap text-center">
+			<h2 class="lm-title">领络律所联盟</h2>
+			<p class="intro-text mb30">领络律所联盟（Linklaws Law Firm Alliance，英文缩写：LLFA）, 由深圳领络科技有限公司发起,和中国境内外新兴的公司制运营模式律师事务所共同构建的一个线上及线下跨地域协作平台。</p>
+		</div> -->
+		<div class="content text-center pt20 pb40">
+			<h2 class="lm-title">合作伙伴</h2>
+			<img width="100%" src="images/parter.jpg" alt="合作伙伴">
+		</div>
+	</div>
+	<div ms-controller="footerCtrl">
+		<div ms-include-src="footerUrl"></div>
+	</div>
+	<script type="text/javascript">
+		seajs.use('../dist/index/js/init.js');
+	</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>实用工具</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="../plug-in/amaze/js/jquery.min.js"></script>
+	<script src="../plug-in/amaze/js/amazeui.min.js"></script>
+	<script type="text/javascript" src="../plug-in/avalon/avalon.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="./js/compangdetail.js"></script>
+</head>
+<body class="htmlbody" ms-controller="compangdetailCtrl">
+	<div class="fixed-header">
+		<!-- Header -->
+		<header class="am-header am-header-default">
+			<div class="am-header-left am-header-nav">
+				<a href="javascript:LinkLawsCmn.goBack();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+			</div>
+			<h1 class="am-header-title">企业基本信息</h1>
+		</header>
+	</div>
+	
+	<div class="fixed-container">
+		<center ms-visible="isshow"><img src="image/loading.gif"></center>
+		
+		<!-- container -->
+		<div class="am-container am-margin-top app-hide" ms-visible="!isshow">
+			<div class="am-text-sm"><b>{{compang.name}}</b></div>
+			<small class="am-block am-margin-xs am-text-right">更新日期：{{compang.start_date}}</small>
+			<section data-am-widget="accordion" class="am-accordion am-accordion-basic app-no-margin" style="background:#fff;">
+				<dl class="am-accordion-item">
+					<dt class="am-accordion-title">登记信息</dt>
+					<dd class="am-accordion-bd am-collapse">
+						<div class="am-accordion-content">
+							<div class="am-g">
+								<div class="am-u-sm-4"><b>注册资本</b></div>
+								<div class="am-u-sm-8 app-no-padding">{{compang.regist_capi}}</div>
+							</div>
+							<div class="am-g">
+								<div class="am-u-sm-4"><b>法定代表人</b></div>
+								<div class="am-u-sm-8 app-no-padding">{{compang.oper_name}}</div>
+							</div>
+							<div class="am-g">
+								<div class="am-u-sm-4"><b>企业类型</b></div>
+								<div class="am-u-sm-8  app-no-padding">{{compang.econ_kind}}</div>
+							</div>
+							<div class="am-g">
+								<div class="am-u-sm-4"><b>成立日期</b></div>
+								<div class="am-u-sm-8  app-no-padding">{{compang.start_date}}</div>
+							</div>
+							<div class="am-g">
+								<div class="am-u-sm-4"><b>经营范围</b></div>
+								<div class="am-u-sm-8  app-no-padding">{{compang.scope}}</div>
+							</div>
+							<div class="am-g">
+								<div class="am-u-sm-4"><b>地址</b></div>
+								<div class="am-u-sm-8  app-no-padding">{{compang.belong_org}}</div>
+							</div>
+							<div class="am-g">
+								<div class="am-u-sm-4"><b>营业期限</b></div>
+								<div class="am-u-sm-8  app-no-padding">{{compang.term_start}}至{{compang.term_end}}</div>
+							</div>
+							<div class="am-g">
+								<div class="am-u-sm-4"><b>发照日期</b></div>
+								<div class="am-u-sm-8  app-no-padding">{{compang.start_date}}</div>
+							</div>
+							<div class="am-g">
+								<div class="am-u-sm-4"><b>登记机关</b></div>
+								<div class="am-u-sm-8  app-no-padding">{{compang.belong_org}}</div>
+							</div>
+							<div class="am-g">
+								<div class="am-u-sm-4"><b>经营状态</b></div>
+								<div class="am-u-sm-8 app-no-padding">{{compang.status}}</div>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl class="am-accordion-item">
+					<dt class="am-accordion-title">股东信息<span class="am-badge am-round am-fr am-margin-top-xs">{{compang.partners.length}}</span></dt>
+					<dd class="am-accordion-bd am-collapse ">
+						<div class="am-accordion-content app-no-padding">
+							<div ms-if="compang.partners.length<=0" class="am-padding-xs">暂无股东信息</div>
+							<div ms-if="compang.partners.length>0" class="am-padding-xs">
+								<div ms-repeat="compang.partners">
+									<div class="am-g am-padding-sm" style="border-bottom:1px solid #d7d7d7">
+										<div class="am-u-sm-9">{{el.name}}</div>
+										<div class="am-u-sm-3 am-text-right"><span ms-click="show('info'+$index)">查看</span></div>
+									</div>
+									<div class="am-padding-xs am-margin-bottom-sm" style="display:none;background:#FcFcFc;" ms-attr-id="info{{$index}}">
+										<div class="am-g am-margin-top-xs" ms-if="el.stock_type">
+											<div class="am-u-sm-4 app-no-padding">股东类型:</div>
+											<div class="am-u-sm-8">{{el.stock_type}}</div>
+										</div>
+										<div class="am-g am-margin-top-xs" ms-if="el.identify_type">
+											<div class="am-u-sm-4 app-no-padding">证照/证件类型:</div>
+											<div class="am-u-sm-8">{{el.identify_type}}</div>
+										</div>
+										<div class="am-g am-margin-top-xs" ms-if="el.identify_no">
+											<div class="am-u-sm-4 app-no-padding">证照/证件号码:</div>
+											<div class="am-u-sm-8">{{el.identify_no}}</div>
+										</div>
+										<div class="am-g am-margin-top-xs" style="border-bottom: 1px solid #00adc1;" ms-if="el.should_capi_items.length>0">
+											<div class="am-u-sm-4 app-no-padding am-text-center am-btn-secondary" style="border-radius: 4px 4px 0 0;">认缴出资信息</div>
+										</div>
+										<div class="am-g" ms-if="el.should_capi_items.length>0">
+											<div class="am-u-sm-4 app-no-padding am-text-center">认缴出资额</div>
+											<div class="am-u-sm-4 app-no-padding am-text-center">出资方式</div>
+											<div class="am-u-sm-4 app-no-padding am-text-center">出资时间</div>
+										</div>
+										<div class="am-g" ms-if="el.should_capi_items.length>0" ms-repeat="el.should_capi_items">
+											<div class="am-u-sm-4 app-no-padding am-text-center">{{el.shoud_capi}}</div>
+											<div class="am-u-sm-4 app-no-padding am-text-center">{{el.invest_type}}</div>
+											<div class="am-u-sm-4 app-no-padding am-text-center">{{el.should_capi_date}}</div>
+										</div>
+										<div class="am-g am-margin-top-xs" style="border-bottom: 1px solid #00adc1;" ms-if="el.real_capi_items.length>0">
+											<div class="am-u-sm-4 app-no-padding am-text-center am-btn-secondary" style="border-radius: 4px 4px 0 0;">实缴出资信息</div>
+										</div>
+										<div class="am-g" ms-if="el.real_capi_items.length>0">
+											<div class="am-u-sm-4 app-no-padding am-text-center">实缴出资额</div>
+											<div class="am-u-sm-4 app-no-padding am-text-center">出资方式</div>
+											<div class="am-u-sm-4 app-no-padding am-text-center">实缴时间</div>
+										</div>
+										<div class="am-g" ms-if="el.real_capi_items.length>0" ms-repeat="el.real_capi_items">
+											<div class="am-u-sm-4 app-no-padding am-text-center">{{el.real_capi}}</div>
+											<div class="am-u-sm-4 app-no-padding am-text-center">{{el.invest_type}}</div>
+											<div class="am-u-sm-4 app-no-padding am-text-center">{{el.real_capi_date}}</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl class="am-accordion-item">
+					<dt class="am-accordion-title">主要成员<span class="am-badge am-round am-fr am-margin-top-xs">{{compang.employees.length}}</span></dt>
+					<dd class="am-accordion-bd am-collapse ">
+						<div class="am-accordion-content">
+							<div ms-if="compang.employees.length<=0" class="am-padding-xs">暂无成员信息</div>
+							<div ms-if="compang.employees.length>0" class="am-padding-xs">
+								<ul class="am-avg-sm-2 am-btn-secondary am-padding-xs" style="border-radius: 4px 4px 0 0;">
+									<li>姓名</li>
+									<li>职位</li>
+								</ul>
+								<ul class="am-avg-sm-2 am-padding-xs" ms-if="compang.employees.length>0" ms-repeat="compang.employees">
+									<li>{{el.name}}</li>
+									<li>{{el.job_title}}</li>
+								</ul>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl class="am-accordion-item">
+					<dt class="am-accordion-title">分支机构<span class="am-badge am-round am-fr am-margin-top-xs">{{compang.branches.length}}</span></dt>
+					<dd class="am-accordion-bd am-collapse">
+						<div class="am-accordion-content">
+							<div ms-if="compang.branches.length<=0" class="am-padding-xs">暂无分子机构信息</div>
+							<div ms-if="compang.branches.length>0" class="am-padding-xs"></div>
+						</div>
+					</dd>
+				</dl>
+				<dl class="am-accordion-item">
+					<dt class="am-accordion-title">变更记录<span class="am-badge am-round am-fr am-margin-top-xs">{{compang.changerecords.length}}</span></dt>
+					<dd class="am-accordion-bd am-collapse ">
+						<div class="am-accordion-content">
+							<div ms-if="compang.changerecords.length<=0" class="am-padding-xs">暂无变更信息</div>
+							<div ms-if="compang.changerecords.length>0" class="am-padding-xs">
+								<div class="am-panel am-panel-default" ms-repeat="compang.changerecords">
+									<div class="am-panel-hd">变更信息：{{el.change_item}}</div>
+									<div class="am-panel-bd">
+										<small class="am-block am-margin-bottom-xs">变更时间：{{el.change_date}}</small>
+										<ul class="am-avg-sm-1">
+											<li><div>变更前：</div><div>{{el.before_content}}</div></li>
+										</ul>
+										<ul class="am-avg-sm-1">
+											<li><div>变更后：</div><div>{{el.after_content}}</div></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</dd>
+				</dl>
+			</section>
+		</div>
+	</div>
+</body>
+</html>

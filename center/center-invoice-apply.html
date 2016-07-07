@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="keywords" content="领络，领络科技，领络律师，互联网+法律，法律工具，律师工具，法律咨询，法律服务，司法，司法考试，司法帮助，律师，协作，律师平台，找律师，法律活动">
+	<meta name="description" content="领络科技，专注于法律行业的互联网科技公司，比法律人更懂互联网，比互联网人更懂法律，为法律人提供最专业、最完善的协同办公解决方案，为需要法律援助的人提供最优的法律资源。">
+	<title>领络律师-发票申请</title>
+	<link rel="shortcut icon" href="../images/logo.ico" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="../plugIn/seajs/sea.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body ms-controller="invoiceCtrl">
+	<!-- header -->
+	<div ms-controller="headerCtrl">
+		<div id="header">
+			<div class="nav-right">
+				<a href="javascript:void(0)" class="nav-edite" id="nav-edite"></a>
+			</div>
+			<span class="next-title">发票申请</span>
+			<a class="btn_control back" ms-click="back"></a>
+		</div>
+	</div>
+	<!-- header end -->
+	<div class="container pt50 animated fadeIn">
+		<div class="loading" ms-visible="loading"></div>
+		<div class="center-content hide-box" ms-visible="!loading">
+			<div class="center-invoice center-invoice-apply">
+			 	<div class="invoice-list-title">开票金额
+			 		<span>元</span>
+			 		<span class="text-active">￥{{sum}}</span>
+			 		<span>可申请金额：</span>
+			 	</div>
+			 	<ul ms-if="invoiceList.length>0">
+			 		<li ms-repeat="invoiceList" ms-click="checkOrding(this,el)">
+			 			<div class="invoice-apply-item">
+			 				<span>订单号：</span>
+			 				<div>{{el.serial_no}}</div>
+			 			</div>
+			 			<div class="invoice-apply-item">
+			 				<span>创建时间：</span>
+			 				<div>{{el.create_time}}</div>
+			 			</div>
+			 			<div class="invoice-apply-item">
+			 				<span>服务类型：</span>
+			 				<div>{{el.name}}</div>
+			 			</div>
+			 			<div class="invoice-apply-item">
+			 				<span>金额：</span>
+			 				<div>{{el.amounts}}元</div>
+			 			</div>
+			 		</li>
+			 	</ul>
+			</div>
+			<div class="center-invoice center-invoice-form">
+				<div class="invoice-list-title">发票信息</div>
+				<p>发票类型：增值税普通发票</p>
+				<!-- <div class="center-invoice-form-item">
+					<label class="radio-box check">增值税普通发票</label>
+					<label class="radio-box">增值税专用发票</label>
+				</div> -->
+				<div class="center-invoice-form-item">
+					<label class="input-box">
+						<input type="text" ms-duplex="title" placeholder="请填写发票抬头">
+					</label>
+				</div>
+			</div>
+			<div class="center-invoice center-invoice-form">
+				<div class="invoice-list-title">邮寄信息</div>
+				<div class="center-invoice-form-item">
+					<label class="input-box">
+						<input type="text" placeholder="收件人姓名" ms-duplex="name">
+					</label>
+				</div>
+				<div class="center-invoice-form-item">
+					<label class="input-box">
+						<input type="text" placeholder="手机号码" ms-duplex="mobile">
+					</label>
+				</div>
+				<div class="center-invoice-form-item">
+					<label class="select-box left">
+						<input type="text" placeholder="请选择省份" ms-duplex="province_name">
+					</label>
+					<label class="select-box right">
+						<input type="text" placeholder="请选择城市" ms-duplex="city_name">
+					</label>
+					<span class="select-layer" ms-click="showLayer"></span>
+				</div>
+				<div class="center-invoice-form-item">
+					<label class="input-box">
+						<input type="text" placeholder="请填写详细地址" ms-duplex="address">
+					</label>
+				</div>
+				<div class="center-invoice-form-item">
+					<p class="tips">温馨提醒：</p>
+					<p class="tips">发票邮寄快递统一默认为xx快递，如需其他快递邮寄请联系平台客服。</p>
+					<div>
+						<button class="item-btn right" ms-click="doApply">
+							<span>申请发票</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="layer-fixed" id="city-layer">
+		<div class="city-layer-header">
+			<a class="icon-back" ms-click="hideLyer"></a>
+			<span>选择城市</span>
+		</div>
+		<div class="city-layer-body">
+			<div class="city-layer-prov animated fadeIn hide-box" ms-if="provList.length>0" ms-visible="provList.length>0">
+				<span ms-repeat="provList" ms-click="checkProv(this,el.province_id,el.name)">{{el.name}}</span>
+			</div>
+			<div class="city-layer-city animated fadeIn hide-box" ms-if="cityList.length>0" ms-visible="cityList.length>0">
+				<span ms-repeat="cityList" ms-click="checkCity(this,el.city_id,el.name)">{{el.name}}</span>
+			</div>
+		</div>
+	</div>
+	<div ms-controller="footerCtrl">
+		<div ms-include-src="footerUrl"></div>
+	</div>
+	<script type="text/javascript">
+		seajs.use('../dist/center/js/centerinvoiceapply.js');
+	</script>
+</body>
+</html>

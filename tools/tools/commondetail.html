@@ -1,0 +1,81 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>享法科技</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="../plug-in/amaze/js/jquery.min.js"></script>
+	<script src="../plug-in/amaze/js/amazeui.min.js"></script>
+	<script type="text/javascript" src="../plug-in/avalon/avalon.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript">
+	var casedetailModel = avalon.define("casedetailCtrl",function(vm){
+		vm.isshow = true;
+		vm.fid = LinkLawsCmn.getUrlParam("id");
+		vm.toolCase = {};
+		vm.casename = "";
+		vm.casetype = "";
+		vm.getDetail = function(){
+			$.ajax({
+				url:LinkLawsCmn.root2+"tools/toolcase!getCaseLawDetailJson.action",
+				type:"post",
+				dataType:"json",
+				data:{id:vm.fid},
+				async:false,
+				success:function(data){
+					if (data.errorCode=="000000") {
+						vm.toolCase=data.toolCase;
+						vm.casename = data.toolCase.casename;
+						vm.casetype = data.toolCase.casetype;
+						vm.isshow=false;
+					}
+				}
+			});
+		}
+	});
+	casedetailModel.getDetail();
+	$(function(){
+		$("title").html(casedetailModel.toolCase.casename+"-享法科技");
+	});
+</script>
+</head>
+<body ms-controller="casedetailCtrl">
+	<div class="fixed-header">
+		<header class="am-header am-header-default">
+			<div class="am-header-left am-header-nav">
+				<a href="javascript:LinkLawsCmn.goBack();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+			</div>
+			<h1 class="am-header-title">解析内容</h1>
+		</header>
+	</div> 
+
+	<div class="fixed-container">
+		<center ms-visible="isshow"><img src="image/loading.gif"></center>
+		<div class="am-container app-hide" ms-visible="!isshow">
+			<article class="am-article">
+				<div class="am-article-hd">
+					<h3 class="am-margin-top-sm" ms-if="toolCase.casename!=''">{{toolCase.casename}}</h3>
+					<a class="app-text-color1" ms-if="toolCase.paraphrase!=''"><b class="am-text-xl">&bull; </b> 释义</a>
+					<p class="am-article-lead" ms-if="toolCase.paraphrase!=''">{{toolCase.paraphrase|html}}</p>
+					<a class="app-text-color2" ms-if="toolCase.relevantlaw!=''"><b class="am-text-xl">&bull; </b> 法律适用</a>
+					<p class="am-article-lead" ms-if="toolCase.relevantlaw!=''">{{toolCase.relevantlaw|html}}</p>
+					<a class="app-text-color1" ms-if="toolCase.jurisdiction!=''"><b class="am-text-xl">&bull; </b> 管辖</a>
+					<p class="am-article-lead" ms-if="toolCase.jurisdiction!=''">{{toolCase.jurisdiction|html}}</p>
+					<a class="app-text-color2" ms-if="toolCase.announcements!=''"><b class="am-text-xl">&bull; </b> 办案注意事项</a>
+					<p class="am-article-lead" ms-if="toolCase.announcements!=''">{{toolCase.announcements|html}}</p>
+				</div>
+			</article>
+		</div>
+	</div>
+</body>
+</html>

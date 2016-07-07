@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>实用工具</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="../plug-in/amaze/js/jquery.min.js"></script>
+	<script src="../plug-in/amaze/js/amazeui.min.js"></script>
+	<script type="text/javascript" src="../plug-in/avalon/avalon.js"></script>
+	<script type="text/javascript" src="../js/json2.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="./js/promiselist.js"></script>
+</head>
+<body ms-controller="promiselistCtrl">
+	<!-- Header -->
+	<header data-am-widget="header" class="am-header am-header-default" data-am-sticky>
+		<div class="app-hide">
+			<div class="am-header-left am-header-nav">
+				<a href="javascript:LinkLawsCmn.goBack();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+			</div>
+			<h1 class="am-header-title am-animation-fade app-hide" ms-visible="title!=''">查询结果</h1>
+		</div>
+	</header>
+	<center ms-visible="isshow"><img src="image/loading.gif"></center>
+	
+	<!-- container -->
+	<div class="am-margin-top-sm app-hide am-animation-fade" ms-visible="!isshow">
+		<div class="am-container" ms-if="promiselistArr.length>0">
+			<div class="am-panel am-panel-default" ms-repeat="promiselistArr">
+				<div class="am-panel-bd" ms-click="linkToDetail($index)">
+					<div class="am-list-news-hd am-cf app-office-panel">
+						<h2>{{el.name}}</h2>
+					</div>
+					<span class="am-block am-text-sm"><label>身份证号：</label> {{el.idcardno}}</span>
+					<span class="am-block am-text-sm"><label>案号：</label> {{el.code}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="am-container am-text-center margintop5" ms-if="totalpages<=0" style="color:#a2a2a2;">未搜索到相关信息</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>实用工具</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="../plug-in/avalon/avalon.js"></script>
+	<script src="../plug-in/amaze/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript">
+		var primiseModel = avalon.define("promiseCtrl",function(vm){
+			vm.detail = localData.getJson("person");
+		});	
+	</script>
+</head>
+<body class="htmlbody" ms-controller="promiseCtrl">
+	<header class="am-header am-header-default">
+		<div class="am-header-left am-header-nav">
+			<a href="javascript:LinkLawsCmn.goBack();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+		</div>
+		<h1 class="am-header-title">详细信息</h1>
+	</header>
+
+	<div class="am-container am-animation-fade">
+		<div class="am-container am-margin-top am-margin-bottom">
+			<div style="background:#fff;" class="am-radius am-padding-sm am-margin-bottom-sm">
+				<div class="am-g">
+					<div class="am-u-sm-12">
+						<h3 class="am-margin-bottom-sm">{{detail.name}}</h3>
+					</div>
+				</div>
+				<div class="am-g">
+					<div class="am-u-sm-3 am-padding-left-sm">
+						<label>性别</label>
+					</div>
+					<div class="am-u-sm-9 am-padding-left-sm">
+						<span>{{detail.sex}}</span>
+					</div>
+				</div>
+				<div class="am-g">
+					<div class="am-u-sm-3 am-padding-left-sm">
+						<label>年龄</label>
+					</div>
+					<div class="am-u-sm-9 am-padding-left-sm">
+						<span>{{detail.age}}</span>
+					</div>
+				</div>
+				<div class="am-g">
+					<div class="am-u-sm-3 am-padding-left-sm">
+						<label>身份证号</label>
+					</div>
+					<div class="am-u-sm-9 am-padding-left-sm">
+						<span>{{detail.idcardno}}</span>
+					</div>
+				</div>
+			</div>
+			<div style="background:#fff;" class="am-radius am-padding-sm">
+				<div class="am-g am-margin-bottom-sm">
+					<div class="am-u-sm-12">
+						<h3 class="am-margin-bottom-xs">执行法院</h3>
+					</div>
+					<div class="am-u-sm-12">{{detail.court}}</div>
+				</div>
+				<div class="am-g am-margin-bottom-sm">
+					<div class="am-u-sm-12">
+						<h3 class="am-margin-bottom-xs">省份</h3>
+					</div>
+					<div class="am-u-sm-12">{{detail.area}}</div>
+				</div>
+				<div class="am-g am-margin-bottom-sm">
+					<div class="am-u-sm-12">
+						<h3 class="am-margin-bottom-xs">案号</h3>
+					</div>
+					<div class="am-u-sm-12">{{detail.code}}</div>
+				</div>
+				<div class="am-g am-margin-bottom-sm">
+					<div class="am-u-sm-12">
+						<h3 class="am-margin-bottom-xs">详细信息</h3>
+					</div>
+					<div class="am-u-sm-12">{{detail.duty}}</div>
+				</div>
+				<div class="am-g am-margin-bottom-sm">
+					<div class="am-u-sm-12">
+						<h3 class="am-margin-bottom-xs">被执行人的履行情况</h3>
+					</div>
+					<div class="am-u-sm-12">{{detail.performance}}</div>
+				</div>
+				<div class="am-g am-margin-bottom-sm">
+					<div class="am-u-sm-12">
+						<h3 class="am-margin-bottom-xs">失信被执行人行为具体情形</h3>
+					</div>
+					<div class="am-u-sm-12">{{detail.disrupt_type}}</div>
+				</div>
+				<div class="am-g am-margin-bottom-sm">
+					<div class="am-u-sm-12">
+						<h3 class="am-margin-bottom-xs">发布日期</h3>
+					</div>
+					<div class="am-u-sm-12">{{detail.pub_time}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

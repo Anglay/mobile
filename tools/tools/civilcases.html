@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>实用工具</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="../plug-in/avalon/avalon.js"></script>
+	<script src="../plug-in/amaze/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="./js/civilcases.js"></script>
+</head>
+<body class="htmlbody" ms-controller="civilvasesCtrl">
+	<header class="am-header am-header-default">
+		<div class="am-header-left am-header-nav">
+			<a href="javascript:LinkLawsCmn.goBack();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+		</div>
+		<h1 class="am-header-title">民事案由解析</h1>
+	</header>
+	<div ms-visible="error" class="am-animation-fade"><button class='am-btn am-btn-danger am-btn-block'>{{error}}</button></div>
+	<div class="am-container am-search">
+		<div class="am-container am-margin-top am-margin-bottom">
+			<div class="am-input-group app-search">
+				<form action="" class="searchForm">
+					<input type="search" id="search" placeholder="请输入关键字搜索" ms-duplex="keywords" class="am-form-field">
+				</form>
+				<span class="am-input-group-label" ms-click="search"><i class="am-icon-sm am-icon-search"></i></span>
+			</div>
+		</div>
+	</div>
+	<div style="background:#fff;" class="am-container app-list-content">
+		<div class="am-g">
+			<div class="am-u-sm-6 app-no-padding app-list-left">
+				<ul class="am-avg-sm-1 am-thumbnails app-no-margin">
+					<li>
+						<div class="app-single-box app-line-bottom-right app-height-16">
+							<a class="am-vertical-align app-link" ms-click="searchCivil(1,'民事')">
+								<div class="am-vertical-align-middle app-item">
+									<img src="./image/tools/ms.svg" alt="民事">
+									<p>民事</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="app-single-box app-line-bottom-right app-height-16">
+							<a class="am-vertical-align app-link" ms-click="searchCivil(290,'商事')">
+								<div class="am-vertical-align-middle app-item">
+									<img src="./image/tools/ss.svg" alt="商事">
+									<p>商事</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="app-single-box app-line-right app-height-16">
+							<a class="am-vertical-align app-link" ms-click="searchCivil(629,'知识产权')">
+								<div class="am-vertical-align-middle app-item">
+									<img src="./image/tools/zscx.svg" alt="知识产权">
+									<p>知识产权</p>
+								</div>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="am-u-sm-6 app-no-padding app-list-right">
+				<ul class="am-avg-sm-1 am-thumbnails app-no-margin">
+					<li>
+						<div class="app-single-box app-line-bottom app-height-12">
+							<a class="am-vertical-align app-link" ms-click="searchCivil(752,'涉外商事')">
+								<div class="am-vertical-align-middle app-item">
+									<img src="./image/tools/swss.svg" alt="涉外商事">
+									<p>涉外商事</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="app-single-box app-line-bottom app-height-12">
+							<a class="am-vertical-align app-link" ms-click="searchCivil(774,'房地产')">
+								<div class="am-vertical-align-middle app-item">
+									<img src="./image/tools/fdc.svg" alt="房地产">
+									<p>房地产</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="app-single-box app-line-bottom app-height-12">
+							<a class="am-vertical-align app-link" ms-click="searchCivil(826,'劳动争议')">
+								<div class="am-vertical-align-middle app-item">
+									<img src="./image/tools/ldzy.svg" alt="劳动争议">
+									<p>劳动争议</p>
+								</div>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="app-single-box app-height-12">
+							<a class="am-vertical-align app-link" ms-click="searchCivil(849,'企业破产清算')">
+								<div class="am-vertical-align-middle app-item">
+									<img src="./image/tools/pcqc.svg" alt="企业破产清算">
+									<p>企业破产清算</p>
+								</div>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="keywords" content="领络，领络科技，领络律师，互联网+法律，法律工具，律师工具，法律咨询，法律服务，司法，司法考试，司法帮助，律师，协作，律师平台，找律师，法律活动">
+	<meta name="description" content="领络科技，专注于法律行业的互联网科技公司，比法律人更懂互联网，比互联网人更懂法律，为法律人提供最专业、最完善的协同办公解决方案，为需要法律援助的人提供最优的法律资源。">
+	<title>领络律师-订单详情</title>
+	<link rel="shortcut icon" href="../images/logo.ico" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="../plugIn/seajs/sea.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body ms-controller="orderCtrl">
+	<!-- header -->
+	<div ms-controller="headerCtrl">
+		<div id="header">
+			<div class="nav-right">
+				<a href="javascript:void(0)" class="nav-edite" id="nav-edite"></a>
+			</div>
+			<span class="next-title">订单详情</span>
+			<a class="btn_control back" ms-click="back"></a>
+		</div>
+	</div>
+	<!-- header end -->
+	<div class="container pt50">
+		<div class="loading" ms-visible="loading"></div>
+		<div class="center-content animated fadeIn hide-box" ms-visible="!loading">
+			<div class="order-detail">
+				<div class="order-detail-item">
+					<div class="weight-box">
+						<span>订单金额：</span><span class="text-active">￥{{detail.univalence}}</span><span>元</span>
+						<span class="right"><span class="text-active">{{detail.unit}}</span></span>
+					</div>
+					<!-- <div class="weight-box">
+						<span>已付<span class="text-active">￥260</span>元，需补<span class="text-active">￥200</span>元</span>
+					</div> -->
+					<div>
+						<span>订单号：{{detail.serial_no}}</span>
+					</div>
+					<div>
+						<span>订单状态：{{detail.status_name}}</span>
+					</div>
+				</div>
+				<div class="order-detail-item">
+					<div>
+						<span ms-class="order-detail-type product-{{detail.product_id}}">{{detail.name}}</span>
+					</div>
+					<div>
+						<p>{{detail.descr}}</p>
+					</div>
+					<div>
+						<span class="order-detail-time">{{detail.create_time}}</span>
+					</div>
+				</div>
+				<div class="order-detail-item hide-box" ms-if="detail.law_id" ms-visible="detail.law_id">
+					<div>
+						<span class="order-service-lawyer">服务律师</span>
+					</div>
+					<div class="order-server-lawyer-detail">
+						<div><img ms-attr-src="{{imgHost}}{{detail.law_img}}" alt=""></div>
+						<div>
+							<p>
+								<span>{{detail.law_name}}</span>
+								<span>
+									{{detail.law_pname}}
+									<i ms-if="detail.law_pname!=''&&detail.law_cname!=''">|</i>
+									{{detail.law_cname}}
+								</span>
+							</p>
+							<p>{{detail.law_firm}}</p>
+							<p>
+								<span ms-if="detail.law_mjname!=''">{{detail.law_mjname}}</span>
+								<span ms-if="detail.law_vcname!=''">{{detail.law_vcname}}</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="order-detail-item hide-box" ms-if="detail.law_id" ms-visible="detail.law_id">
+					<div>
+						<span class="order-service-lawyer">相关资料</span>
+					</div>
+					<div>
+						<a href="doc/web前端开发笔试题.docx">投资协议</a>
+						<a href="doc/北京+设计总监.pdf">股权代持协议</a>
+					</div>
+				</div> -->
+				<div class="order-detail-item hide-box" ms-if="detail.law_id&&detail.commented=='0'&&detail.status=='6'" ms-visible="detail.law_id&&detail.commented=='0'&&detail.status=='6'">
+					<span class="item-btn right">
+						<a ms-attr-href="center-lawyer-praise.html?serial_no={{serial_no}}">去评价</a>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ms-controller="footerCtrl">
+		<div ms-include-src="footerUrl"></div>
+	</div>
+	<script type="text/javascript">
+		seajs.use('../dist/center/js/centerorderdetail.js');
+	</script>
+</body>
+</html>

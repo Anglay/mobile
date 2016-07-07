@@ -1,0 +1,376 @@
+{
+    "data": [
+        {
+            "id":"1",
+        	"name": "财产资质查询",
+            "sub": [
+                {
+                    "title": "国土资源部",
+                    "note": "全国范围内土地抵押、转让、招拍挂等信息外，可于土地市场网查询全国范围内的供地计划、出让公告、大企业购地情况等。",
+                    "url": "http://www.mlr.gov.cn/",
+                    "icon":"info_check_icon_6.jpg"
+                },
+                {
+                    "title": "国家工商行政管理总局商标局",
+                    "note": "负责商品商标、服务商标等商标的注册工作，办理商标异议裁定以及注册商标的变更、转让、续展、补证、注销等有关事宜，可按商标号、商标、申请人名称等方式，查询某一商标的有关信息。",
+                    "url": "http://sbj.saic.gov.cn/",
+                    "icon":"info_check_icon_7.jpg"
+                },
+                {
+                    "title": "中国土地市场网",
+                    "note": "可于土地市场网查询全国范围内的供地计划、出让公告、大企业购地情况等。该网站无需注册。",
+                    "url": "http://www.landchina.com/",
+                    "icon":"info_check_icon_8.png"
+                },
+                {
+                    "title": "中国质量认证中心",
+                    "note": "可查询产品认证证书、质量体系认证证书等。",
+                    "url": "http://www.cqc.com.cn/",
+                    "icon":"info_check_icon_9.jpg"
+                },
+                {
+                    "title": "工信部ICP/IP地址/域名信息备案管理系统",
+                    "note": "可以查询公司名下的网站信息。",
+                    "url": "http://www.miitbeian.gov.cn/",
+                    "icon":"info_check_icon_10.jpg"
+                },
+                {
+                    "title": "住房和城乡建设部",
+                    "note": "建筑业资质查询（包括设计、勘察、造价、监理、建筑、房产开发）。",
+                    "url": "http://www.mohurd.gov.cn",
+                    "icon":"info_check_icon_11.jpg"
+                },
+                {
+                    "title": "国家食品药品监督管理总局",
+                    "note": "可查询食品、药品、化妆品、医疗器械、医疗广告、互联网药品等注册信息.",
+                    "url": "http://app1.sfda.gov.cn/datasearch/face3/dir.html",
+                    "icon":"info_check_icon_12.jpg"
+                }
+            ]
+        },
+        {
+            "id":"2",
+            "name": "案例检索",
+            "sub": [
+                {
+                    "title": "无讼案例",
+                    "note": "精确易用，体验极佳的免费案例检索工具",
+                    "url": "http://www.itslaw.com/",
+                    "icon" : "info_check_icon_1.jpg"
+                },
+                {
+                    "title": "最高人民法院中国裁判文书网",
+                    "note": "查询全国范围内已发生法律效力的判决书、裁定书、决定书。",
+                    "url": "http://www.court.gov.cn/zgcpwsw/",
+                    "icon" : "info_check_icon_2.jpg"
+                },
+                {
+                    "title": "OpenLaw",
+                    "note": "开放的法律服务和知识分享网站",
+                    "url": "http://www.openlaw.cn/",
+                    "icon":"info_check_icon_3.jpg"
+                },
+                {
+                    "title": "CaseShare",
+                    "note": "免费裁判文书分享和检索平台",
+                    "url": "http://caseshare.cn/",
+                    "icon":"info_check_icon_4.jpg"
+                },
+                {
+                    "title": "法海风控",
+                    "note": "付费法律大数据检索分析平台",
+                    "url": "http://www.fahaicc.com/",
+                    "icon":"info_check_icon_5.jpg"
+                }
+            ]
+        },
+        {
+            "id":"3",
+            "name": "非诉常用网站",
+            "sub": [
+                {
+                    "title": "中国万网",
+                    "note": "域名、网址等互联网信息查询",
+                    "url": "http://www.net.cn",
+                    "icon":"info_check_icon_13.jpg"
+                },
+                {
+                    "title": "深圳市市场和质量监督管理委员会官网",
+                    "note": "该网站对深圳本地的市场主体信息录入较全面，包括司法机关对股权的冻结信息",
+                    "url": "http://www.szscjg.gov.cn",
+                    "icon":"default.jpg"
+                },
+                {
+                    "title": "计兮",
+                    "note": "金融、法律、财税领域的知识社区",
+                    "url": "http://www.goingconcern.cn",
+                    "icon":"info_check_icon_14.jpg"
+                },
+                {
+                    "title": "国家税务总局官方网站法规数据库",
+                    "note": "国家税务总局推出的权威税法数据库，税法更新及时准确",
+                    "url": "http://www.chinatax.gov.cn",
+                    "icon":"info_check_icon_15.jpg"
+                }
+            ]
+        },
+        {
+            "id":"4",
+            "name": "企业信息查询",
+            "sub": [
+                {
+                    "title": "全国企业信用信息公示系统",
+                    "note": "该系统提供在工商部门登记的各类市场主体信息查询服务。",
+                    "url": "http://gsxt.saic.gov.cn/",
+                    "icon":"info_check_icon_16.jpg"
+                },
+                {
+                    "title": "全国组织机构代码管理中心",
+                    "note": "全国组织机构查询网",
+                    "url": "http://www.nacao.org.cn/",
+                    "icon":"info_check_icon_17.jpg"
+                }
+            ]
+        },
+        {
+            "id":"5",
+            "name": "诉讼情况查询",
+            "sub": [
+                {
+                    "title": "全国法院被执行人信息查询系统",
+                    "note": "查询是否涉及诉讼，是否有被执行财产的情况。",
+                    "url": "http://zhixing.court.gov.cn/search/",
+                    "icon":"default.jpg"
+                },
+                {
+                    "title": "全国法院失信被执行人名单信息查询系统",
+                    "note": "查询全国法院失信被执行人名单信息。",
+                    "url": "http://shixin.court.gov.cn/",
+                    "icon":"default.jpg"
+                },
+                {
+                    "title": "中国审判流程信息公开网",
+                    "note": "中国法院系统官方网站",
+                    "url": "http://www.court.gov.cn/zgsplcxxgkw",
+                    "icon":"default.jpg"
+                },
+                {
+                    "title": "人民检察院案件信息公开网",
+                    "note": "中国检察系统官方网站",
+                    "url": "http://www.ajxxgk.jcy.cn/html/index.html",
+                    "icon":"default.jpg"
+                }
+            ]
+        },
+        {
+            "id":"6",
+            "name": "证券信息查询",
+            "sub": [
+                {
+                    "title": "中国证券监督管理委员会",
+                    "note": "可查询上市公司披露信息，证券期货市场的有关法律、法规，证券期货市场监管的规章、规则和办法。",
+                    "url": "http://www.csrc.gov.cn/",
+                    "icon":"info_check_icon_22.jpg"
+                },
+                {
+                    "title": "中国证监会-首次公开股票信息展示平台",
+                    "note": "查询拟在深交所、上交所首次公开发行的公司的招股说明书（申报稿）。",
+                    "url": "http://ipo.csrc.gov.cn/",
+                    "icon":"info_check_icon_23.jpg"
+                },
+                {
+                    "title": "上海证券交易所",
+                    "note": "上海证券交易所归属中国证监会垂直管理，可查询上交所上市公司的信息以及法律规则等。",
+                    "url": "http://www.sse.com.cn/",
+                    "icon":"info_check_icon_24.jpg"
+                },
+                {
+                    "title": "深圳证券交易所",
+                    "note": "深圳证券交易所由中国证券监督管理委员会监督管理，可查询深交所上市公司的信息以及法律规则等。",
+                    "url": "http://www.szse.cn/",
+                    "icon":"info_check_icon_25.jpg"
+                },
+                {
+                    "title": "全国中小企业股份转让系统",
+                    "note": "全国中小企业股份转让系统（俗称“新三板”）是经国务院批准设立的全国性证券交易场所，全国中小企业股份转让系统有限责任公司为其运营管理机构。",
+                    "url": "http://www.neeq.cc/",
+                    "icon":"info_check_icon_26.jpg"
+                },
+                {
+                    "title": "巨潮资讯网-多层次资本市场信息披露平台",
+                    "note": "中国证券监督管理委员会指定的上市公司信息披露网站",
+                    "url": "http://www.cninfo.com.cn/",
+                    "icon":"info_check_icon_42.jpg"
+                }
+            ]
+        },
+        {
+            "id":"7",
+            "name": "国外法律案例检索",
+            "sub": [
+                {
+                    "title": "Realdealdocs",
+                    "note": "英文商事法律文本检索网站",
+                    "url": "http://www.realdealdocs.com",
+                    "icon":"info_check_icon_18.jpg"
+                },
+                {
+                    "title": "US legal",
+                    "note": "美国法律文本检索网站",
+                    "url": "http://www.uslegalforms.com",
+                    "icon":"info_check_icon_19.jpg"
+                },
+                {
+                    "title": "专利搜索引擎",
+                    "note": "可搜索中国专利和世界专利",
+                    "url": "http://www.soopat.com",
+                    "icon":"info_check_icon_20.jpg"
+                },
+                {
+                    "title": "美国法院案例库",
+                    "note": "公开美国案例",
+                    "url": "http://www.pacer.gov",
+                    "icon":"info_check_icon_21.jpg"
+                }
+            ]
+        },
+        {
+            "id":"8",
+            "name": "知识产权",
+            "sub": [
+                {
+                    "title": "中国知识产权网",
+                    "note": "国家知识产权出版社推出的知识产权领域里的专业网站。",
+                    "url": "http://www.cnipr.com/",
+                    "icon":"info_check_icon_27.jpg"
+                },
+                {
+                    "title": "国家版权局",
+                    "note": "新闻出版总署信息中心主办的版权信息服务网站。作品授权信息查询、法律文书下载等。",
+                    "url": "http://www.ncac.gov.cn/",
+                    "icon":"info_check_icon_28.jpg"
+                },
+                {
+                    "title": "版权网",
+                    "note": "由北京国际版权交易中心构建的版权信息和交易服务平台，提供较全面的版权交易、版权保护、版权服务、版权投融资等服务。",
+                    "url": "http://www.e-bq.com/",
+                    "icon":"info_check_icon_29.jpg"
+                },
+                {
+                    "title": "世界知识产权组织",
+                    "note": "由WIPO提供的关于全球知识产权服务、法律法规政策、合作与信息的论坛。内含多个国家的专利、商标等数据库。",
+                    "url": "http://www.wipo.int/portal/en/index.html",
+                    "icon":"info_check_icon_30.jpg"
+                },
+                {
+                    "title": "国家知识产权局",
+                    "note": "可查询申请人、专利权利人、代理机构等的案件基本信息、审查信息、公布公告信息。",
+                    "url": "http://www.sipo.gov.cn/",
+                    "icon":"info_check_icon_31.jpg"
+                },
+                {
+                    "title": "中国版权保护中心计算机软件著作权登记公告",
+                    "note": "中国版权保护中心在计算机软件登记、作品著作权登记、著作权转让和专有许可合同登记与备案、质押合同登记等版权公共服务领域。",
+                    "url": "http://www.ccopyright.com.cn/cpcc/notice/soft/softRegisterNotice.jsp",
+                    "icon":"info_check_icon_32.jpg"
+                }
+            ]
+        },
+        {
+            "id":"9",
+            "name": "中国法律英文网",
+            "sub": [
+                {
+                    "title": "中国法律与实践",
+                    "note": "中国法律的英文版",
+                    "url": "http://www.chinalawandpractice.com",
+                    "icon":"info_check_icon_33.jpg"
+                },
+                {
+                    "title": "威科先行英文网站",
+                    "note": "荷兰威科集团CCH的英文版法规数据库",
+                    "url": "http://www.cchchina.com.cn",
+                    "icon":"info_check_icon_34.jpg"
+                },
+                {
+                    "title": "北大法律英文网",
+                    "note": "综合性英文法律检索平台",
+                    "url": "http://www.lawinfochina.com",
+                    "icon":"info_check_icon_35.jpg"
+                },
+                {
+                    "title": "中华法律集团",
+                    "note": "综合性英文法律检索平台",
+                    "url": "http://www.isinolaw.com",
+                    "icon":"default.jpg"
+                },
+                {
+                    "title": "中国法律透视",
+                    "note": "金杜律师事务所的法律博客",
+                    "url": "http://www.chinalawinsight.com",
+                    "icon":"default.jpg"
+                },
+                {
+                    "title": "中国法律博客",
+                    "note": "英文商业法律博客",
+                    "url": "http://www.chinalawblog.com",
+                    "icon":"default.jpg"
+                }
+            ]
+        },
+        {
+            "id":"10",
+            "name": "中国法律数据库",
+            "sub": [
+                {
+                    "title": "北大法宝",
+                    "note": "中国法律法规数据库",
+                    "url": "http://www.pkulaw.cn",
+                    "icon":"info_check_icon_36.jpg"
+                },
+                {
+                    "title": "北大法意",
+                    "note": "综合性法律检索平台",
+                    "url": "http://www.lawyee.net",
+                    "icon":"info_check_icon_37.jpg"
+                },
+                {
+                    "title": "法律之星",
+                    "note": "中国法律信息网",
+                    "url": "http://www.law-star.com",
+                    "icon":"default.jpg"
+                },
+                {
+                    "title": "法律图书馆",
+                    "note": "综合性法律检索平台",
+                    "url": "http://www.law-lib.com",
+                    "icon":"info_check_icon_38.jpg"
+                },
+                {
+                    "title": "中国法院网：法律文库",
+                    "note": "中国司法机关的官方网站",
+                    "url": "http://www.chinacourt.org",
+                    "icon":"info_check_icon_39.jpg"
+                },
+                {
+                    "title": "万律网",
+                    "note": "Westlaw在华推出的中文法律数据库",
+                    "url": "http://www.westlawchina.com",
+                    "icon":"info_check_icon_40.jpg"
+                },
+                {
+                    "title": "律商网",
+                    "note": "律商联讯在华推出的中文法律数据库",
+                    "url": "http://www.lexiscn.com",
+                    "icon":"info_check_icon_41.jpg"
+                },
+                {
+                    "title": "威科先行中文网站",
+                    "note": "荷兰威科集团在华推出的中文法律数据库",
+                    "url": "http://www.wkinfo.com.cn",
+                    "icon":"default.jpg"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,321 @@
+[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}
+
+body{
+	font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  	background-color: white;
+  	font-size: 13px;
+  	color: #444444;
+  	overflow-x: hidden;
+}
+
+ .am-header-title{
+     font-weight:bold !important;
+     font-size:16px !important;
+ }
+ 
+a:hover{
+    text-decoration: none;
+}
+a {
+    color: #40d16d;
+    text-decoration: none;
+}
+.datepicker.dropdown-menu {
+  width: 250px;
+  height: 270px;
+}
+.datepicker.dropdown-menu button {
+  outline: none;
+  border: 0px;
+}
+.datepicker.dropdown-menu tbody {
+  height: 180px;
+}
+.datepicker.dropdown-menu tbody button {
+  padding: 0px;
+}
+.datepicker.dropdown-menu.datepicker-mode-1 tbody button,
+.datepicker.dropdown-menu.datepicker-mode-2 tbody button {
+  height: 65px;
+}
+
+.modal-backdrop.am-fade {
+    opacity: .5;
+    transition: opacity .15s linear;
+}
+.modal-backdrop.am-fade.ng-enter {
+    opacity: 0;
+}
+.modal-backdrop.am-fade.ng-enter.ng-enter-active {
+    opacity: .5;
+}
+.modal-backdrop.am-fade.ng-leave {
+    opacity: .5;
+}
+.modal-backdrop.am-fade.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+.ng-active{
+    color: #e74c3c;
+}
+
+select{
+    -webkit-appearance: none;
+    border-radius: 4px !important;
+    height: 44px !important;
+    background-color: #edf5f7 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+input[type=text],input[type=date],input[type=number]{
+    -webkit-appearance: none;
+    border-radius: 4px !important;
+    height: 44px !important;
+    background-color: #edf5f7 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+label{
+    padding-left: 4px;
+    font-weight: normal;
+}
+
+.mbsc-android-holo-light .dwv{
+    background-color: #008cc6;
+    color: #fff !important;
+    border: none !important;
+}
+
+/*input[type=checkbox]{*/
+    /*height: 20px !important;*/
+    /*width: 20px !important;*/
+/*}*/
+
+/*input[type=radio]{*/
+    /*-webkit-appearance: none;*/
+    /*border-radius: 10px !important;*/
+    /*height: 20px !important;*/
+    /*width: 20px !important;*/
+/*}*/
+
+.checkbox{
+    font-size: 16px;
+    /*line-height: 16px;*/
+
+}
+
+/*.checkbox input{*/
+    /*margin-right: 10px;*/
+
+/*}*/
+
+.btn{
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.ob-cell{
+    height: 120px;
+    margin: 0px 0px 0px 0px;
+    padding: 15px;
+    position: relative;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #FAFAFA;
+}
+
+.blue{
+	background-color: #3498db;
+}
+
+.red{
+	background-color: #e74c3c;
+}
+
+.green{
+	background-color: #2ecc71;
+}
+
+.purple{
+	background-color: #9b59b6;
+}
+
+
+
+.ob-icon{
+	display: inline-block;
+	text-align: center;
+	border-radius: 34px;
+	margin: 0px 16px 0px 0px;
+}
+
+.ob-icon-image{
+	font-size: 28px;
+	vertical-align: middle;
+	padding: 14px;
+	color: white;
+}
+
+
+.descColor{
+    color: #bbb;
+}
+
+.tool-item{
+    display: inline-block;
+    font-size: 16px;
+    padding-top: 32px;
+    color: #444;
+    padding-left: 70px;
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 60px 60px;
+    height: 100%;
+
+}
+.tool-item-lawyerFee{
+    background-image:url("./images/lawyerFee.png");
+}
+
+.tool-item-legalFee{
+    background-image:url("./images/legalFee.png");
+}
+
+.tool-item-arbitrationFee{
+    background-image:url("./images/arbitrationFee.png");
+}
+
+.tool-item-economicCompensation{
+    background-image:url("./images/economicCompensation.png");
+}
+
+.tool-item-trafficAccident{
+    background-image:url("./images/trafficAccident.jpg");
+}
+
+.tool-item-interestRate{
+    background-image:url("./images/interestRate.png");
+}
+
+.title{
+    text-align: center;
+}
+
+.warp{
+    margin: 10px;
+}
+
+.center{
+    text-align: center;
+}
+
+.resultRow{
+    margin-top: 20px;
+}
+
+.btnRow{
+    margin-top: 10px;
+}
+
+.table-bordered-current td{
+    width: 60%;
+
+}
+
+.carousel-container {
+    position: relative;
+    width:100%;
+    height:160px;
+    display:inline-block;
+    text-align: center;
+    padding: 0px;
+}
+
+.carousel-container ul[rn-carousel] {
+    width:100%;
+    height:100%;
+    margin: 0px;
+}
+
+.carouselImage{
+    text-align:right;
+    color:white;
+    background-size:cover;
+    height: 100%;
+    background-position: center center;
+
+}
+
+.carousel-indicator{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+}
+
+.rn-carousel-indicator span{
+    padding: 3px;
+    font-size: 20px;
+}
+.linkLawColor{
+    color: #40d16d;
+}
+
+.btnRest{
+    background-color: white !important;
+    color: #40d16d !important;
+    border-color: #40d16d !important;
+}
+
+.btnOk{
+    background-color: #40d16d !important;
+    color: white !important;
+    border-color: #40d16d !important;
+    outline: none !important    ;
+}
+
+.ng-click-active{
+    background-color: #40d16d !important;
+    color: white !important;
+}
+
+.titleImage{
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    left: 100px;
+}
+.titleLable{
+    display: inline-block;
+    font-size: 24px;
+    line-height: 40px;
+    padding-left: 50px;
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: 40px 40px;
+    height: 40px;
+}
+
+.btn-grp-interestRate{
+    padding: 10px 10px 0px 10px;
+}

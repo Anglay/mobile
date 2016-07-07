@@ -1,0 +1,217 @@
+@charset 'utf-8';
+.banner{
+	height: 250px;
+    padding-top: 150px;
+	background: url("../images/banner.jpg") no-repeat scroll center center / 100% 100%;
+	text-align: center;
+}
+.banner img{
+	display: block;
+	width: 60%;
+	margin: 0 auto 60px;
+}
+.link-btn{
+	display: inline-block;
+    padding: 0 20px;
+    font-size: 16px;
+    height: 35px;
+    line-height: 33px;
+}
+.link-btn, .link-btn:hover, .link-btn:visited, .link-btn:active{
+	background: #21b851 none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.down-con-one{
+	padding: 30px 0;
+	background: #e8f5eb;
+}
+.down-con-one div{
+	height: auto;
+	overflow: hidden;
+	text-align: center;
+}
+.down-con-one div img{
+	width: 30%;
+}
+.down-con-one div span{
+	display: block;
+	font-size: 20px;
+	padding: 5px 0;
+}
+.down-con-one div p{
+	text-align: left;
+	padding: 5px 10px;
+	font-size: 16px;
+}
+.down-con-one div p:last-child{
+	margin-bottom: 20px;
+}
+.down-con-two{
+	height: auto;
+	overflow: hidden;
+}
+.down-con-two .con-two-item{
+	height: auto;
+	overflow: hidden;
+}
+.down-con-two .con-two-item .img-box{
+	position: relative;
+	height: 400px;
+}
+.down-con-two .con-two-item .img-box img{
+	position: absolute;
+	-webkit-tap-highlight-color: transparent;
+  	-webkit-touch-callout: none;
+  	-webkit-user-select: none;
+	border: none;
+}
+.down-con-two .con-two-item:first-child{
+	background:#fff; 
+}
+.down-con-two .con-two-item:nth-child(2){
+	background: url("../images/bg-01.png") no-repeat scroll 0 0 / 100% 100%;
+}
+.down-con-two .con-two-item:last-child{
+	background: url("../images/bg-02.png") no-repeat scroll 0 0 / 100% 100%;
+}
+.down-con-two .con-two-item:first-child .img-box img:first-child{
+	height: 70%;
+	top:15%;
+	left: 10%;
+}
+.down-con-two .con-two-item:first-child .img-box img:last-child{
+	height: 86%;
+    right: 10%;
+    top: 7%;
+}
+.down-con-two .con-two-item:nth-child(2) .img-box img:first-child{
+	left: 16%;
+    top: 30%;
+    width: 80%;
+}
+.down-con-two .con-two-item:nth-child(2) .img-box img:last-child{
+	width: 90%;
+	left: 3%;
+	top:10%;
+}
+.down-con-two .con-two-item:last-child .img-box img:first-child{
+	left: 5%;
+    top: 10%;
+    height: 80%;
+}
+.down-con-two .con-two-item:last-child .img-box img:last-child{
+	height: 90%;
+	right: 5%;
+	top:5%;
+}
+.down-con-two .con-two-item .text-area{
+	height: auto;
+	overflow: hidden;
+	padding: 5px 15px;
+}
+.down-con-two .con-two-item .text-area h1{
+	font-size: 22px;
+	margin-bottom: 15px;
+}
+.down-con-two .con-two-item .text-area h2{
+	font-size: 20px;
+	color: #21b851;
+	margin-bottom: 8px;
+}
+.down-con-two .con-two-item .text-area p{
+	font-size: 14px;
+	line-height: 25px;
+	margin-bottom: 10px;
+}
+
+.down-con-three{
+	padding: 30px 0;
+	height: auto;
+	overflow: hidden;
+	background: url("../images/yun.png") no-repeat scroll 0 0 / 100% 100%;
+}
+.con-three-content{
+	height: auto;
+	overflow: hidden;
+}
+.con-three-content img{
+	display: block;
+	margin:5px auto;
+	width:40%; 
+}
+.con-three-content img:first-child{
+	margin-bottom: 30px;
+}
+.con-three-content p{
+	font-size: 20px;
+	text-align: center;
+	margin-top: 15px;
+}
+.layer{
+    bottom: 0;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 31009;
+}
+.layer-con {
+    background: #fff none repeat scroll 0 0;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    width: 700px;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999999;
+}
+.layer-bar {
+    background: #21b851 none repeat scroll 0 0;
+    color: #fff;
+    font-size: 20px;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 30px;
+    position: relative;
+}
+.layer-bar span {
+    background: rgba(0, 0, 0, 0) url("../images/close.png") no-repeat scroll center center / 100% 100%;
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 30px;
+}
+.layer_holder {
+    height: auto;
+    overflow: hidden;
+    padding: 50px;
+}
+.layer-mobile {
+    text-align: center;
+}
+.layer-mobile img {
+    width: 65%;
+}
+.layer-mobile > p {
+    color: #b3b3b3;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 15px 0 0;
+}
+.layer-mobile > p.app-name {
+    color: #21b850;
+}
+.layer-mobile > a.link-btn {
+    margin-top: 20px;
+}

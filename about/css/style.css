@@ -1,0 +1,33 @@
+@charset 'utf-8';
+.about-con{
+	height: auto;
+	overflow: hidden;
+	background: #fff;
+}
+.about-con h2{
+	border-bottom: 1px solid #d8d8d8;
+    color: #a2a2a2;
+    font-size: 18px;
+    margin: 15px;
+    padding-bottom: 15px;
+}
+.about{
+	margin: 15px;
+}
+.about h3{
+	color: #404040;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.about p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+.map-box {
+    height: auto;
+    overflow: hidden;
+}
+.map-box img {
+    float: left;
+}

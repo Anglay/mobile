@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="keywords" content="领络，领络科技，领络律师，互联网+法律，法律工具，律师工具，法律咨询，法律服务，司法，司法考试，司法帮助，律师，协作，律师平台，找律师，法律活动">
+	<meta name="description" content="领络科技，专注于法律行业的互联网科技公司，比法律人更懂互联网，比互联网人更懂法律，为法律人提供最专业、最完善的协同办公解决方案，为需要法律援助的人提供最优的法律资源。">
+	<title>领络律师-话题</title>
+	<link rel="shortcut icon" href="../images/logo.ico" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="../plugIn/seajs/sea.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body ms-controller="topiclistCtrl">
+	<!-- header -->
+	<div ms-controller="headerCtrl">
+		<div id="header">
+			<div class="nav-right">
+				<a href="javascript:void(0)" class="nav-user"><i></i></a>
+				<a href="javascript:void(0)" class="nav-edite" id="nav-edite"></a>
+			</div>
+			<span>话题</span>
+			<a class="btn_control open" href="javascript:void(0);"></a>
+			<div class="nav" ms-include-src="headerUrl"></div>
+		</div>
+	</div>
+	<!-- header end -->
+	<div class="topic-item-bar">
+		<div class="swiper-container" id="topic-item">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" ms-click="checkItem(this,'')">
+					<span class="active">全部</span>
+				</div>
+				<div class="swiper-slide" ms-click="checkItem(this,2)">
+					<span>同行讨论</span>
+				</div>
+				<div class="swiper-slide" ms-click="checkItem(this,3)">
+					<span>业务合作</span>
+				</div>
+				<div class="swiper-slide" ms-click="checkItem(this,1)">
+					<span>法律咨询</span>
+				</div>
+				<div class="swiper-slide" ms-click="checkItem(this,4)">
+					<span>其他</span>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+	<div class="container pt95 animated fadeIn">
+		<div class="topic-content">
+			<div class="topic-list">
+				<div class="loading" ms-visible="loading"></div>
+				<div class="topicshowcontent hide-box" ms-if="list.length>0" ms-visible="!loading">
+					<div class="topic-item" ms-repeat="list">
+						<a  ms-attr-href="topicdetail.html?id={{el.id}}">
+							<div ms-attr-class="el.files_url==''?'item-con item-left-100':'item-con item-left'">
+								<div class="item-title">{{el.title}}</div>
+								<div class="item-footerbar">
+									<span>点赞</span>
+									<span>{{el.praise_count}}</span>
+									<span>|</span>
+									<span>评论</span>
+									<span>{{el.comment_count}}</span>
+									<span>|</span>
+									<span>{{el.create_time}}</span>
+								</div>
+							</div>
+							<div class="item-icon item-right" ms-visible="el.files_url!=''">
+								<img src="images/defult.png" alt="" ms-if="el.files_url==''">
+								<img ms-attr-src="{{imgHost}}{{el.files_url}}" alt="" ms-if="el.files_url!=''">
+							</div>
+						</a>
+					</div>
+			  	</div>
+			  	<div class="load-more hide-box" ms-click="loadmore" ms-visible="totalpages>1&&pageNo<totalpages">{{loadmorehtml|html}}</div>
+			  	<div class="text-center hide-box" ms-visible="total==''">暂未查找到话题</div>
+			</div>
+		</div>
+	</div>
+	<div ms-controller="footerCtrl">
+		<div ms-include-src="footerUrl"></div>
+	</div>
+	<script type="text/javascript">
+		seajs.use('../dist/topic/js/init.js');
+	</script>
+</body>
+</html>

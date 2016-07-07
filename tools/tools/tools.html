@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>实用工具</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<script type="text/javascript" src="../plug-in/avalon/avalon.js"></script>
+	<script src="../plug-in/amaze/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<style>
+		
+		.toolscontent{
+			width: 100%;
+			padding: 0.5em 0;
+		}
+		[class*="am-u-"]{
+			padding: 0;
+		}
+		.tools-item  img{
+			width: 60px;
+			height: 60px;
+		}
+		@media (min-device-height:480px){
+			.tools-item img{
+				width: 45px;
+  				height: 45px;
+			}
+			.am-thumbnail-caption{
+				padding: 0.2em 0.8em;
+			}
+			.toolscontent .am-u-sm-6 .tools-item{
+				background: #fff;
+				padding: 0.6em 0;
+			}
+		}
+		@media (min-device-height:568px) {
+			.tools-item img{
+				width: 50px;
+  				height: 50px;
+			}
+			.am-thumbnail-caption{
+				padding:0.7em 0.8em;
+			}
+			.toolscontent .am-u-sm-6 .tools-item{
+				background: #fff;
+				padding: 0.7em 0;
+			}
+		}
+		@media (min-device-height:627px){
+			.tools-item img{
+				width: 60px;
+  				height: 60px;
+			}
+			.toolscontent .am-u-sm-6 .tools-item{
+				background: #fff;
+				padding: 1.2em 0;
+			}
+		}
+		@media (min-device-height:736px) {			
+			.toolscontent .am-u-sm-6 .tools-item{
+				background: #fff;
+				padding: 1.8em 0;
+			}
+		}
+
+		.toolscontent .am-u-sm-6:nth-child(2n+1) .tools-item{
+			margin: 0 0.5em 0.5em;
+		}
+		.toolscontent .am-u-sm-6:nth-child(2n) .tools-item{
+			margin: 0 0.5em 0.5em 0;
+		}
+		.toolscontent .am-u-sm-6:nth-last-child(1) .tools-item,.toolscontent .am-u-sm-6:nth-last-child(2) .tools-item{
+			margin-bottom: 0;
+		}
+		
+		
+	</style>
+</head>
+<body class="htmlbody" ms-controller="toolsCtrl">
+	<header class="am-header am-header-default">
+		<h1 class="am-header-title">实用工具</h1>
+	</header>
+	<div class="am-container toolscontent">
+		<div class="am-u-sm-6 am-text-center">
+			<a href="civilcases.html">
+				<div class="tools-item">
+					<img src="./image/tools-1.png" alt="民事案由解析"/>
+					<figcaption class="am-thumbnail-caption app-tools-color1">民事案由解析</figcaption>
+				</div>
+			 </a>
+		</div>
+		<div class="am-u-sm-6 am-text-center">
+			<a href="Linklaws/index.html" class="am-block am-radius app-tools-item">
+				<div class="tools-item">
+					<img src="./image/tools-2.png" alt="费用计算"/>
+					<figcaption class="am-thumbnail-caption app-tools-color2">费用计算</figcaption>
+				</div>
+			</a>
+		</div>
+		<div class="am-u-sm-6 am-text-center">
+			<a href="criminalcase.html" class="am-block am-radius app-tools-item">
+				<div class="tools-item">
+					<img src="./image/tools-3.png" alt="刑事罪名解析"/>
+					<figcaption class="am-thumbnail-caption app-tools-color2">刑事罪名解析</figcaption>
+				</div>
+			</a>
+		</div>
+		<div class="am-u-sm-6 am-text-center">
+			<a href="officesearch.html" class="am-block am-radius app-tools-item">
+				<div class="tools-item">					
+					<img src="./image/tools-4.png" alt="司法机关检索"/>
+					<figcaption class="am-thumbnail-caption app-tools-color3">司法机关检索</figcaption>					
+				</div>
+			</a>
+		</div>
+		<div class="am-u-sm-6 am-text-center">
+			<a href="compangsearch.html" class="am-block am-radius app-tools-item">
+				<div class="tools-item">
+					<img src="./image/tools-5.png" alt="企业信息检索"/>
+					<figcaption class="am-thumbnail-caption app-tools-color3">企业信息检索</figcaption>
+				</div>
+			</a>
+		</div>
+		<div class="am-u-sm-6 am-text-center">
+			<a href="trademarkesearch.html" class="am-block am-radius app-tools-item">
+				<div class="tools-item">
+					<img src="./image/tools-6.png" alt="商标信息查询"/>
+					<figcaption class="am-thumbnail-caption app-tools-color1">商标信息查询</figcaption>
+				</div>
+			</a>
+		</div>
+		<div class="am-u-sm-6 am-text-center">
+			<a href="promisesearch.html" class="am-block am-radius app-tools-item">
+				<div class="tools-item">
+					<img src="./image/tools-7.png" alt="失信人查询"/>
+					<figcaption class="am-thumbnail-caption app-tools-color3">失信人查询</figcaption>
+				</div>
+			</a>
+		</div>
+		<div class="am-u-sm-6 am-text-center">
+			<a href="infosearch.html" class="am-block am-radius app-tools-item">
+				<div class="tools-item">
+					<img src="./image/tools-8.png" alt="信息检索"/>
+					<figcaption class="am-thumbnail-caption app-tools-color1">信息检索</figcaption>
+				</div>
+			</a>
+		</div>		
+	</div>
+
+	<!-- <footer class="linklawsappfooter"></footer> 
+	<script type="text/javascript">
+		$(function(){
+			LinkLawsCmn.getFooterHtml($(".linklawsappfooter"));
+		})
+	</script>-->
+</body>
+</html>

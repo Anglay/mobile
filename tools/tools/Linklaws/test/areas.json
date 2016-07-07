@@ -1,0 +1,34 @@
+[
+ {
+  "name": "广东",
+  "key":"guangdong"
+ },
+ {
+  "name": "安徽",
+  "key":"anhui"
+ },
+ {
+  "name": "福建",
+  "key":"fujian"
+ },
+ {
+  "name": "海南",
+  "key":"hainan"
+ },
+ {
+  "name": "湖南",
+  "key":"hunan"
+ },
+ {
+  "name": "湖北",
+  "key":"hubei"
+ },
+ {
+  "name": "河南",
+  "key":"henan"
+ },
+ {
+  "name": "河北",
+  "key":"hebei"
+ }
+]

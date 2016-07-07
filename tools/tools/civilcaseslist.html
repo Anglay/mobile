@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>享法科技-实用工具</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="../plug-in/amaze/js/jquery.min.js"></script>
+	<script src="../plug-in/amaze/js/amazeui.min.js"></script>
+	<script type="text/javascript" src="../plug-in/avalon/avalon.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="./js/civilcaseslist.js"></script>
+</head>
+<body ms-controller="civilcaseslistCtrl">
+	<div class="fixed-header">
+		<header class="am-header am-header-default">
+			<div class="app-hide" ms-if="!isSearch" ms-visible="!isSearch">
+				<div class="am-header-left am-header-nav">
+					<a href="javascript:LinkLawsCmn.goBack();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+				</div>
+				<h1 class="am-header-title am-animation-fade app-hide" ms-visible="title!=''">{{title}}</h1>
+				<div class="am-header-right am-header-nav">
+					<a ms-click="showSearch"><i class="am-header-icon am-icon-search2"></i></a>
+				</div>
+			</div>
+			<div class="serarch-header app-hide" ms-if="isSearch" ms-visible="isSearch">
+				<div class="am-header-left am-header-nav">
+					<a class="am-text-default" ms-click="hideSearch">取消</i></a>
+				</div>
+				<h1 class="am-header-title">
+					<form action="" class="searchForm">
+						<input type="search" id="search" class="am-form-field am-round" ms-duplex="keywords" placeholder="请输入关键字搜索"/>
+					</form>
+				</h1>
+				<div class="am-header-right am-header-nav">
+					<a class="am-text-default" ms-click="search">搜索</a>
+				</div>
+			</div>
+		</header>
+	</div>
+	<div class="fixed-container">
+		<div ms-visible="error" class="am-animation-fade"><button class='am-btn am-btn-danger am-btn-block'>{{error}}</button></div>
+
+		<center ms-visible="isshow"><img src="image/loading.gif"></center>
+			
+		<div class="am-container app-hide" ms-visible="!isshow">
+			<div class="am-container app-no-padding am-margin-top-sm am-margin-bottom-sm">
+				<ul class="am-list" ms-if="civilcaseslist.length>0">
+					<li ms-repeat="civilcaseslist">
+						<a ms-attr-href="civilcasessublist.html?id={{el.id}}&title={{el.casename}}" class="app-arr-right am-text-truncate">{{el.casename}}</a>
+					</li>
+				</ul>
+			</div>
+			<button ms-click="loadData" ms-if="totalpages>1&&page<totalpages" class="am-btn am-btn-default am-btn-block am-margin-bottom load-btn">{{loadtext|html}}</button>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<header class="am-header am-header-default">
+    <div class="am-header-left am-header-nav">
+        <a href="javascript:history.back();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+    </div>
+    <h1 class="am-header-title">律师费</h1>
+</header>
+<div class="container">
+    <div cg-busy="promise">
+        <div class="row">
+            <toaster-container toaster-options="{'time-out': 3000, 'close-button':false, 'animation-class': 'toast-top-center'}"></toaster-container>
+        </div>
+        <!-- <div class="row">
+            <div class="col-xs-12 center">
+                <h2 class="h2 center linkLawColor titleLable tool-title-lawyerFee linkLawColor">律师费</h2>
+            </div>
+        </div> -->
+        <form name="toolForm" novalidate>
+            <div class="row">
+
+                <div class="warp center">
+                    <select class="form-control" ng-model = "areaValue"  name="areaValue" ng-init="areaValue = ''" ng-options="obj.provincename for obj in areas.rows" ng-change="areaValueChanged()" required="请选择所在地区">
+                        <option value="">请选择所在地区</option>
+                    </select>
+                </div>
+
+                <div class="warp center">
+                    <select class="form-control" ng-model = "typeValue" ng-init="typeValue = '1'" ng-change="typeValueChanged()" required>
+                        <option value="1">计件收费</option>
+                        <option value="2">按标的比例收费</option>
+                        <option value="3">计时收费</option>
+                    </select>
+                </div>
+
+                <div class="warp" ng-show="typeValue == '2' || typeValue == '3'">
+                    <label>{{typeValue == '2' ? '请输入标的额(元)':'请输入个人收费价格(元/小时)'}}</label>
+                    <input type="number" min="1" name= "priceValue" ng-model = "priceValue" class="form-control"  required ="{{typeValue == '2' ? '请输入标的额(元)':'请输入个人收费价格(元/小时)'}}" placeholder="{{typeValue == '2' ? '请输入标的额（元）':'请输入个人收费价格（元/小时）'}}" ng-Required="typeValue == '2' || typeValue == '3'">
+                </div>
+
+                <div class="warp" ng-show="typeValue == 3">
+                    <label>请输入时间(小时)</label>
+                    <input type="number" min="1" name="timeValue" ng-model = "timeValue" class="form-control"  placeholder="请输入时间（小时）" required="请输入时间（小时）" ng-Required="typeValue == 3">
+                </div>
+
+                <div class="warp" ng-show = "typeValue == 3 && showSpecPrice == true">
+                    <label>
+                        政府指导价{{specPrice}}/小时
+                    </label>
+                </div>
+            </div>
+
+            <div class="row btnRow">
+                <div class=" col-xs-6">
+                    <button type="button" ng-click="calc()" class="btn btn-success btn-block btnOk" >计算</button>
+                </div>
+                <div class=" col-xs-6">
+                    <button type="button" ng-click="reset()" class="btn btn-default btn-block btnRest">重置</button>
+                </div>
+            </div>
+        </form>
+        <div class="row resultRow">
+            <div class=" col-xs-12" ng-show ="showResult==true">
+                <h3 class="center linkLawColor">计算结果</h3>
+                <div  ng-bind-html = "resultData"></div>
+            </div>
+            <div class=" col-xs-12" ng-show ="showFormula==true">
+                <h3 class="center linkLawColor">计算公式</h3>
+                <div ng-bind-html = "formulaData"></div>
+            </div>
+        </div>
+        <div class="page-header descColor" ng-show ="showContent==true">
+            <span class="glyphicon glyphicon-info-sign"></span>
+            计算结果仅供参考,数据来源<a href="" ng-click="open()" data-animation="am-fade-and-scale" data-placement="center">&lt&lt{{contentData}}&gt&gt</a>
+        </div>
+    </div>
+</div>
+

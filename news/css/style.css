@@ -1,0 +1,136 @@
+@charset "utf-8";
+.banner{
+	height: 250px;
+    padding-top: 150px;
+	background: url("../images/banner.jpg") no-repeat scroll center center / 100% 100%;
+	text-align: center;
+}
+
+.news-con{
+    padding:30px 0;
+}
+.nav-bar{padding:0 10px;}
+.nav-bar .nav-bar-item{
+	padding-left: 0;
+	margin: 0 0 20px;
+	list-style: none;
+	text-align: center;
+}
+.nav-bar-item li {
+	display: inline;
+    font-size: 14px;
+    line-height: 24px;
+}
+.nav-bar-item li > a{
+  display: inline-block;
+  border-radius: 20px;
+  padding: 4px 18px;
+}
+.nav-bar-item li.active a{
+    border: 1px solid #21b850;
+    color: #21b850;
+}
+.listcontent{
+	height: auto;
+	overflow: hidden;
+	min-height: 300px;
+	padding: 5px 10px;
+}
+.news-list{
+    margin-bottom: 25px;
+}
+.news-list a.news-link, .news-list a.news-link:hover{
+    color: #2f2f2f;
+    text-decoration: none;
+}
+.news-list img{
+    height: 200px;
+    width: 100%;
+}
+.news-list h2{
+    color: #303030;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.news-list span {
+    color: #a2a2a2;
+    font-size: 16px;
+    margin: 0;
+}
+
+.pagetion{
+    position: relative;
+    height: 60px;
+    overflow:hidden;
+    width: 200px;
+    margin: 0 auto;
+}
+.pagetion a{
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    background: url(../images/page.png) no-repeat;
+}
+.pagetion a.page-prev{
+    left:0;
+    background-position: 0 0;
+}
+.pagetion a.page-prev:hover{
+    background-position: 0 -65px;
+}
+.pagetion a.page-prev:active {
+    background-position: 0 -130px;
+}
+.pagetion a.page-next{
+    right:0;
+    background-position: -65px 0;
+}
+.pagetion a.page-next:hover{
+    background-position: -65px -65px;
+}
+.pagetion a.page-next:active {
+    background-position: -65px -130px;
+}
+.pagetion span{
+    display: block;
+    width: 120px;
+    margin: 0 auto;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 16px;
+}
+.pagetion span i{
+    list-style: none;
+}
+.pagetion span i:first-child{
+    color:#66DA8A;
+}
+
+
+/* detail */
+.new-detail{
+    padding: 30px 10px;
+    background: #fff;
+}
+.new-detail h1{
+    font-size: 20px;
+    margin: 0;
+}
+.new-detail p{
+    color: #a2a2a2;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.new-detail .wraper{
+    margin: 25px auto;
+    width: 100%;
+}
+.new-detail  .wraper img{
+    width: 100% !important;
+}

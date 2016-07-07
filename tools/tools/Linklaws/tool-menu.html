@@ -1,0 +1,15 @@
+<header class="am-header am-header-default">
+    <div class="am-header-left am-header-nav">
+        <a href="javascript:history.back();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+    </div>
+    <h1 class="am-header-title">计算工具</h1>
+</header>
+<div class="container">
+    <div class="row">
+        <div ng-repeat="d in datas" class="col-xs-6 col-md-2 ob-cell">
+            <a  ui-sref = "{{d.redirectTo}}">
+                <div class="tool-item {{d.iconImage}}">{{d.title}}</div>
+            </a>
+        </div>
+    </div>
+</div>

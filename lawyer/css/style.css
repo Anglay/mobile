@@ -1,0 +1,312 @@
+@charset "utf-8";
+.mark-content{
+	height: auto;
+	overflow: hidden;
+	background-color: #F0F0F0;
+}
+.loading{
+	background: url(../images/load.gif) no-repeat center center;
+	margin: 15px;
+	height: 24px;
+}
+.load-more{
+	height: 30px;
+	text-align: center;
+}
+.load-more div{
+	margin: 0 auto;
+	width: 65px;
+	padding-left: 28px;
+	background: url(../images/load.gif) no-repeat left center;
+}
+.lawer-list{
+	height: auto;
+	overflow: hidden;
+	margin: 12px 8px;
+	min-height: 300px;
+}
+.lawer-list .laweritem{
+	background: #fff;
+	margin:0em auto 0.5em auto;
+	padding:0.8em 0.5em; 
+	text-align: center;
+	height: auto;
+	overflow: hidden;
+	border-radius: 4px;
+}
+.lawer-list .laweritem .laweritemimg{
+	width: 5em;
+	display: inline-block;
+	float: left;
+}
+.lawer-list .laweritem img{
+	width: 5em;
+	vertical-align:middle;
+}
+.lawer-list .laweriteminfo{
+	display: block;
+	margin-left: 5.5em;
+	text-align: left;
+}
+.lawer-list .laweriteminfo .laweriteminfo-item{
+	height: auto;
+	overflow: hidden;
+}
+.lawer-list .laweriteminfo .laweriteminfo-item:nth-child(1) span:nth-child(1){
+	font-weight: bold;
+	color: #404040;
+}
+.lawer-list .laweriteminfo .laweriteminfo-item:nth-child(1) span:nth-child(2),
+.lawer-list .laweriteminfo .laweriteminfo-item:nth-child(1) span:nth-child(3){
+	display: inline-block;
+	background: #66D98B;
+	color:#fff;
+	border-radius: 4px;
+	padding: 0 10px;
+	float: right;
+	margin-left: 2px;
+}
+.lawer-list .laweriteminfo .laweriteminfo-item:nth-child(2){
+	padding: 8px 0 0;
+}
+.lawer-list .laweriteminfo .laweriteminfo-item:nth-child(2) i{
+	background: url(../images/icon-verify.png) no-repeat;
+	background-size: cover;
+	display: inline-block;
+	width: 57px;
+	height: 13px;
+}
+.lawer-list .laweriteminfo .laweriteminfo-item:nth-child(2) span{
+	display: inline-block;
+	float: right;
+	color: #A1A1A1;	
+	font-size: 12px;
+}
+.lawer-list .laweriteminfo .laweriteminfo-item:nth-child(3) span{
+	display: inline-block;
+	color: #A1A1A1;
+	font-size: 12px;
+}
+.lawer-list .laweriteminfo .laweriteminfo-item:nth-child(3) span:nth-child(1),
+.lawer-list .laweriteminfo .laweriteminfo-item:nth-child(3) span:nth-child(2),
+.lawer-list .laweriteminfo .laweriteminfo-item:nth-child(3) span:nth-child(3){
+	padding-right: 5px;
+}
+.lawer-list .laweriteminfo .laweriteminfo-item:nth-child(3) span:nth-child(4){
+	float: right;
+}
+
+
+/* search bar */
+.search-list-pannel{
+	position: fixed;
+  	left: 0;
+  	right: 0;
+  	color: #fff;
+  	z-index: 1;
+  	font-size: 1rem;
+  	top: 50px;
+}
+.search-list-pannel .mask,.search-list-pannel .search-list-bd{
+	position: absolute;
+  	left: 0;
+  	right: 0;
+  	display: none;
+}
+.search-list-pannel.show{
+	height: 100%;
+}
+.search-list-pannel.show .mask,.search-list-pannel.show .search-list-bd{
+	display: block;
+}
+
+.search-list-pannel .mask{
+  	background: #404040;
+  	opacity: .65;
+  	z-index: 0;
+  	bottom: 0;
+  	top:0;
+}
+.search-hd{
+	position:absolute;
+	width:100%;
+	height: 45px;
+	overflow: hidden;
+	background: #fff;
+	color: #404040;
+}
+.search-item{
+	display: inline-block;
+	float: left;
+	width: 25%;
+	height: auto;
+	overflow: hidden;
+	background: #fff;
+	text-align: center;
+}
+.search-item span{
+	display: inline-block;
+	text-align: center;
+	font-size: 14px;
+	width: 60%;
+	height: 20px;
+	line-height: 20px;
+	margin-bottom: 5px;
+	padding: 0 10%;
+	margin-top: 13px;
+	border-left: 1px solid #DBDBDB;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
+	white-space:nowrap;
+	background: url(../images/icon-t-d.png) no-repeat bottom right;
+	background-size: 10px 10px;
+	color: #A2A2A2;
+}
+.search-item.active span{
+	background: url(../images/icon-t-f.png) no-repeat bottom right;
+	background-size: 10px 10px;
+	color: #303030;
+}
+.search-item:first-child span{
+	border:none;
+}
+.search-list-pannel .search-list-bd{
+	top: 45px;
+	background: #fff;
+	color: #404040;
+	height: 320px;
+	border-top: 1px solid #DBDBDB;
+}
+.pt95{padding-top: 95px;}
+.left-list-item,.right-list-item{
+	display: inline-block;
+	padding: 10px 0 0;
+	margin-bottom: 10px;
+	float: left;
+	width: 50%;
+	height: 300px;
+	overflow-y:auto;
+	background: #fff;
+}
+.left-list-item{
+	border-right: 1px solid #DBDBDB;
+	margin-left: -1px;
+}
+.left-list-item span,.right-list-item span{
+	display: block;
+	height:35px;
+	line-height: 35px;
+	padding-left: 20%;
+	font-size: 14px;
+}
+.left-list-item span.active,.right-list-item span.active{
+	color:#40d16d;
+}
+.mh320{
+	min-height: 320px;
+}
+
+
+/* lawer detail */
+
+.serviceitems{
+	height: auto;
+	overflow: hidden;
+	padding: 1em;
+}
+.serviceitems>div{
+	height: auto;
+	overflow: hidden;
+	display: inline-block;
+	width: 25%;
+	float: left;
+	text-align: center;
+}
+.serviceitems div.service-icon img{
+	border-radius: 100%;
+	width: 70%;
+	margin: 0 15%;
+	float: left;
+}
+.serviceitems label{
+	color:#404040;
+	display: inline-block;
+	margin-top: 5px;
+}
+.app-pannel,.app-pannel dl{
+	height: auto;
+	overflow: hidden;
+}
+.app-pannel dl{
+	border-radius:4px;
+	background-color: #fff;
+}
+.app-pannel dl dt{
+	padding: 6px 8px;
+	margin: 0;
+}
+.app-pannel dl dd{
+	padding: 0;
+	margin: 0;
+}
+.app-pannel dl dt{
+	font-size: 16px;
+	position: relative;
+	
+}
+.app-pannel dl dt:before{
+	/* content: url(../images/icon-arr.png); */
+	position: absolute;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    transform: translate(0px, 0px);
+    transition: transform 0.2s linear 0s, -webkit-transform 0.2s linear 0s;
+    transform: rotate(-90deg);
+}
+.app-pannel dl.open dt:before{
+	transform: rotate(0deg);
+}
+.app-pannel dl dd{
+	border-top: 1px solid #d8d8d8;
+	display: none;
+}
+.app-pannel dl.open dd{
+	display: block;
+}
+.pannel-table{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.pannel-table>div{
+	height: auto;
+	overflow: hidden;
+	border-bottom:1px solid #d8d8d8;
+}
+.pannel-table>div:last-child{
+	border:none;
+}
+.pannel-table>div div{
+	display: inline-block;
+	height: auto;
+	overflow: hidden;
+	float: left;
+	height:auto;
+	line-height: 35px;
+}
+.pannel-table>div div:first-child{
+	width: 25%;
+	text-align: center;
+}
+.pannel-table>div div:last-child{
+	width: 75%;
+	border-left:1px solid #d8d8d8;
+	margin-left: -1px;
+}
+.pannel-table>div div p{
+	height:auto;
+	line-height: 35px;
+	padding: 0 10px;
+}

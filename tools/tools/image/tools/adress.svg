@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="25" height="24.5" viewBox="0 0 25 24.5">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#color-overlay-1);
+      }
+
+      .cls-2 {
+        fill: #2d7c11;
+        stroke: #00acc1;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        fill-opacity: 0;
+      }
+
+      .cls-3 {
+        fill: #00acc1;
+        fill-rule: evenodd;
+      }
+    </style>
+
+    <filter id="color-overlay-1" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#12c8cc"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+      <feBlend in2="SourceGraphic" result="solidFill"/>
+    </filter>
+  </defs>
+  <g class="cls-1">
+    <ellipse cx="12.5" cy="18.75" rx="12" ry="5.25" class="cls-2"/>
+    <path d="M11.999,21.000 C11.999,21.000 4.497,14.696 4.497,7.350 C4.497,3.290 7.856,-0.000 11.999,-0.000 C16.140,-0.000 19.499,3.290 19.499,7.350 C19.499,14.624 11.999,21.000 11.999,21.000 ZM11.999,4.219 C10.212,4.219 8.764,5.625 8.764,7.359 C8.764,9.094 10.212,10.500 11.999,10.500 C13.784,10.500 15.233,9.094 15.233,7.359 C15.233,5.625 13.784,4.219 11.999,4.219 Z" class="cls-3"/>
+  </g>
+</svg>

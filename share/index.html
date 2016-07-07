@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="keywords" content="领络，领络科技，领络律师，互联网+法律，法律工具，律师工具，法律咨询，法律服务，司法，司法考试，司法帮助，律师，协作，律师平台，找律师，法律活动">
+	<meta name="description" content="领络科技，专注于法律行业的互联网科技公司，比法律人更懂互联网，比互联网人更懂法律，为法律人提供最专业、最完善的协同办公解决方案，为需要法律援助的人提供最优的法律资源。">
+	<title>领络律师</title>
+	<link rel="shortcut icon" href="../images/logo.ico" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="../plugIn/seajs/sea.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body ms-controller="shareCtrl">
+	<div class="loading" ms-visible="loading"></div>
+	<div class="container hide-box" ms-visible="!loading">
+		<!-- 活动分享 -->
+		<div class="share-type share-type-action animated fadeIn hide-box" ms-if="shareType=='action'" ms-visible="shareType=='action'">
+			<div class="action-com">
+				<img ms-attr-src="{{imgHost}}{{detail.detail.img_url}}" ms-if="detail.detail.img_url!=''">
+				<img src="images/defult.png" ms-if="detail.detail.img_url==''">
+			</div>
+			<div class="action-wraper">
+				<div class="action-wraper-header">
+					<div>{{detail.detail.title}}</div>
+					<div><span>{{detail.detail.type_name}}</span></div>
+					<div>
+						<label>
+							<i></i>
+							<span>{{detail.detail.start_time|date10String}} ~ {{detail.detail.end_time|date10String}}</span>
+						</label>
+						<label>
+							<i></i>
+							<span>{{detail.detail.address}}</span>
+						</label>
+						<label>
+							<i></i>
+							<span>{{detail.detail.sponsor}}</span>
+						</label>
+					</div>
+				</div>
+				<div class="action-wraper-content">{{detail.detail.content|html}}</div>
+			</div>
+		</div>
+		<!-- 话题分享 -->
+		<div class="share-type share-type-topic animated fadeIn hide-box" ms-if="shareType=='topic'" ms-visible="shareType=='topic'">
+			<div class="topic-wraper">
+				<div class="topic-wraper-header">
+					<div>{{detail.title}}</div>
+					<div><span>{{detail.params_name}}</span></div>
+				</div>
+				<div class="topic-wraper-body">
+					<div class="topic-info">
+						<span>
+							<img ms-attr-src="{{imgHost}}{{detail.img}}" ms-if="detail.img!==''">
+							<img src="images/defult.png" ms-attr-alt="detail.user_name" ms-if="detail.img===''">
+						</span>
+						<span>{{detail.user_name}}</span>
+						<span>{{detail.create_time}}</span>
+						<span>|</span>
+						<span>{{detail.favorite_count}} 收藏</span>
+					</div>
+					<div class="topic-wraper-content">{{detail.content|html}}</div>
+					<div class="topic-img-box" ms-if="files_url.length>0">
+						<img ms-repeat="files_url" ms-attr-src="{{imgHost}}{{el}}">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 律师名片分享 -->
+		<div class="share-type share-type-lawyer animated fadeIn hide-box" ms-if="shareType=='lawyer'" ms-visible="shareType=='lawyer'">
+			<div class="lawyer-com">
+				<p>您的好友邀请您去领络完善个人卡片</p>
+				<div class="lawyer-header">
+					<div>
+						<img src="images/lawer.jpg" alt="律师名片">
+					</div>
+					<div class="lawyer-header-info">
+						<p>{{detail.name}}</p>
+						<p>
+							<span>{{detail.major_name}}</span>
+							<span ms-if="detail.major_name!=''&detail.vocation_name!=''">/</span>
+							<span>{{detail.vocation_name}}</span>
+						</p>
+						<p>执业年限：{{y}}年</p>
+					</div>
+				</div>
+				<div class="lawyer-content">
+					<div class="layer-content-item">
+						<span>律所</span>
+						<div>{{detail.law_firm}}</div>
+					</div>
+					<div class="layer-content-item">
+						<span>地址</span>
+						<div>{{detail.address}}</div>
+					</div>
+					<div class="layer-content-item">
+						<span>邮箱</span>
+						<div>{{detail.email}}</div>
+					</div>
+				</div>
+				<div class="lawyer-footer">
+					<p>领络律师是一款针对法律人群体量身定做的办公实用工具。</p>
+					<p>找律师平台工具，能让律师之间联系互通，及时解决案件难题、材料查找的难题，是律师界互动、交流、协作新平台。</p>
+					<p>同时，这款工具还提供六款办公服务，包括费用计算、案由解析类、罪名解析类、企业的工商登记查询、所有的司法机关查询，以及律师工作必备的五十二个网站的查询。</p>
+				</div>
+			</div>
+		</div>
+		<!-- app分享 -->
+		<div class="share-type share-type-app animated fadeIn hide-box" ms-if="shareType=='app'" ms-visible="shareType=='app'">
+			{{shareType}}
+		</div>
+	</div>
+	<div class="share-down-bar">
+		<a ms-attr-href="downUrl">APP下载</a>
+		<div>领络律师&nbsp;&nbsp;享法方式!</div>
+	</div>
+	<script type="text/javascript">
+		seajs.use('../dist/share/js/init.js');
+	</script>
+</body>
+</html>

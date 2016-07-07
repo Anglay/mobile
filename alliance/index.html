@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="keywords" content="领络，领络科技，领络律师，互联网+法律，法律工具，律师工具，法律咨询，法律服务，司法，司法考试，司法帮助，律师，协作，律师平台，找律师，法律活动">
+	<meta name="description" content="领络科技，专注于法律行业的互联网科技公司，比法律人更懂互联网，比互联网人更懂法律，为法律人提供最专业、最完善的协同办公解决方案，为需要法律援助的人提供最优的法律资源。">
+	<title>领络律师-律所联盟</title>
+	<link rel="shortcut icon" href="../images/logo.ico" type="images/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="../plugIn/seajs/sea.js"></script>
+	<script type="text/javascript" src="../js/config.js"></script>
+</head>
+<body ms-controller="allianceCtrl">
+	<!-- header -->
+	<div ms-controller="headerCtrl">
+		<div id="header">
+			<div class="nav-right">
+				<a href="javascript:void(0)" class="nav-user"><i></i></a>
+			</div>
+			<span>律所联盟</span>
+			<a class="btn_control open" href="javascript:void(0);"></a>
+			<div class="nav" ms-include-src="headerUrl"></div>
+		</div>
+	</div>
+	<!-- header end -->
+	<div class="container pt50 animated fadeIn">
+		<div class="banner">
+			<img data-wow-delay="0.2s" data-wow-duration="0.5s" class="wow fadeInDown animated" src="images/logo.png" alt="律所联盟" >
+			<a data-wow-delay="0.2s" data-wow-duration="0.5s" class="link-btn wow fadeInUp basefont animated">联接公司律所&nbsp;凝聚共创未来</a>
+		</div>
+		<div class="alliance-con-one bg-white">
+			<div>
+				<span>简介</span>
+				<p>领络律所联盟(Linklaws Law Firm Alliance，英文缩写：LLFA)，是由深圳领络科技有限公司发起，中国境内外新兴的公司制运营模式律师事务所积极参与，共同构建的一个线上及线下跨地域协作平台。</p>
+			</div>
+			<div>
+				<span>现状</span>
+				<p>领络律所联盟以各成员律所深入交流、资源共享、协作办案、提高影响力和知名度为己任，搭建跨地域协作线上及线下办公平台。经过半年多的发展，联盟成员律所已有十余家，范围覆盖全国多个主要城市。</p>
+			</div>
+			<div>
+				<span>未来</span>
+				<p>联盟以“联接公司律所，凝聚共创未来”为宗旨，秉着“互动交流，携手共进”的原则，诚邀全国公司制律所加盟，共同努力打造一支专业化的法律服务队伍，为广大法律需求者提供更加专业、极致的法律服务。</p>
+			</div>
+		</div>
+		<div class="alliance-con-two">
+			<div class="alliance-nav">
+				<ul class="alliance-nav-pager">
+					<li>
+						<a href="javascript:void(0);">
+							<div class="tip1"></div>
+							<span>搭建联盟平台</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="tip2"></div>
+							<span>知识成果共享</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="tip3"></div>
+							<span>培训交流整合</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="tip4"></div>
+							<span>品牌协作推广</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="tip5"></div>
+							<span>案源整合分享</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="alliance-con-three bg-white">
+			<h1>联盟成员</h1>
+			<div class="nav-bar">
+				<ul class="nav-bar-item hide-box" ms-if="cityArr.length>0" ms-visible="cityArr.length>0">
+					<li class="active" ms-click="filer(this,'')"><a href="javascript:void(0);">全部城市</a></li>
+					<li ms-repeat="cityArr" ms-click="filer(this,el.city_id)"><a href="javascript:void(0);">{{el.city_name}}</a></li>
+				</ul>
+			</div>
+			<div class="loading" ms-visible="isShow"></div>
+			<div class="listcontent hide-box" ms-if="allianceArr.length>0" ms-visible="!isShow">
+				<div class="col-sm-6 col-md-4 alliance-item animated fadeInUp" ms-repeat="allianceArr">
+					<a class="con-three">
+						<img ms-attr-alt="el.name" ms-src="{{logoHost}}{{el.max_logo_url}}">
+						<div class="con-three-layer" ms-click="linkTo(el.web_sites)">
+							<h2>{{el.name}}</h2>
+							<label>电话：{{el.tel}}</label>
+							<label>地址：{{el.address}}</label>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ms-controller="footerCtrl">
+		<div ms-include-src="footerUrl"></div>
+	</div>
+	<script type="text/javascript">
+		seajs.use('../dist/alliance/js/init.js');
+	</script>
+</body>
+</html>

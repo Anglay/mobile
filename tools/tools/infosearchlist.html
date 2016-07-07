@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>享法科技-实用工具</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="../plug-in/amaze/js/jquery.min.js"></script>
+	<script src="../plug-in/amaze/js/amazeui.min.js"></script>
+	<script type="text/javascript" src="../plug-in/avalon/avalon.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="./js/infosearchlist.js"></script>
+</head>
+<body ms-controller="infosearchlistCtrl">
+	<div class="fixed-header">
+		<!-- Header -->
+		<header class="am-header am-header-default">
+			<div class="am-header-left am-header-nav">
+				<a href="javascript:LinkLawsCmn.goBack();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+			</div>
+			<h1 class="am-header-title">{{listArr.name}}</h1>
+		</header>
+	</div>
+	
+	<div class="fixed-container">
+		<center ms-visible="isshow"><img src="image/loading.gif"></center>
+		
+		<!-- container -->
+		<div class="am-container app-hide" ms-visible="!isshow">
+			<div class="am-container app-no-padding" ms-if="listArr.sub.length>0">
+				<div class="am-panel am-panel-default am-margin-top am-margin-bottom" ms-repeat="listArr.sub">
+					<div class="am-panel-bd">
+						<!-- <a class="am-list-item-hd" ms-click="openWin(el.url)"> -->
+						<a class="am-list-item-hd">
+							<div class="am-list-news-hd am-cf app-office-panel am-margin-bottom-sm">
+								<h2 style="color:#575757;"><img class="am-margin-right-sm" ms-attr-alt="{{el.title}}" ms-attr-src="image/sitelogo/{{el.icon}}">{{el.title}}</h2>
+							</div>
+							<p class="am-text-sm app-no-margin" style="color:#575757;">{{el.note}}</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

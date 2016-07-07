@@ -1,0 +1,69 @@
+<header class="am-header am-header-default">
+    <div class="am-header-left am-header-nav">
+        <a href="javascript:history.back();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+    </div>
+    <h1 class="am-header-title">诉讼费</h1>
+</header>
+<div class="container">
+    <div cg-busy="promise">
+        <div class="row">
+            <toaster-container toaster-options="{'time-out': 3000, 'close-button':false, 'animation-class': 'toast-top-center'}"></toaster-container>
+        </div>
+
+       <!--  <div class="row">
+        <div class="col-xs-12 center">
+            <h2 class="h2 center linkLawColor titleLable tool-title-legalFee linkLawColor">诉讼费</h2>
+        </div>
+    </div> -->
+    <form novalidate name="toolForm">
+    <div class="row">
+            <div class="warp center">
+                <select class="form-control" name="feeTypeValue" ng-model = "feeTypeValue" ng-options="obj.dname for obj in rootFeeTypes.rows" ng-change="feeTypeValueChanged()" required="请选择费用类型">
+                    <option value="">请选择费用类型</option>
+                </select>
+            </div>
+
+            <div class="warp center">
+                <select class="form-control" name="childFeeTypeValue" ng-model = "childFeeTypeValue" ng-options="obj.dname for obj in childFeeTypes" ng-change="childFeeTypeValueChanged()" required="请选择费用类型">
+                    <option value="">请选择类型</option>
+                </select>
+            </div>
+
+            <div class="warp center" ng-hide="needHideGrandchildFeeTypeValue">
+                <select class="form-control" name="grandchildFeeTypeValue" ng-model = "grandchildFeeTypeValue" ng-change = "grandchildFeeTypeValueChanged()" ng-options="obj.dname for obj in grandchildFeeTypes" required="请选择费用类型" ng-Required = "needHideGrandchildFeeTypeValue == false">
+                    <option value="">请选择类型</option>
+                </select>
+            </div>
+
+            <div class="warp" ng-hide="needHidePriceValue">
+                <label>请输入标的额(人民币)</label>
+                <input type="number" min="1" ng-model = "priceValue" class="form-control"  placeholder="请输入标的额（人民币）" name="priceValue" required="请输入标的额(人民币)" ng-Required="!needHidePriceValue">
+            </div>
+    </div>
+    <div class="row btnRow">
+        <div class=" col-xs-6">
+            <button type="button" ng-click="calc()" class="btn btn-success btn-block btnOk">计算</button>
+        </div>
+        <div class=" col-xs-6">
+            <button type="button" ng-click="reset()" class="btn btn-default btn-block btnRest">重置</button>
+        </div>
+    </div>
+    </form>
+    <div class="row resultRow">
+        <div class=" col-xs-12" ng-show ="showResult==true">
+            <h3 class="center linkLawColor">计算结果</h3>
+            <div  ng-bind-html = "resultData"></div>
+        </div>
+        <div class=" col-xs-12" ng-show ="showFormula==true">
+            <h3 class="center linkLawColor">计算公式</h3>
+            <div ng-bind-html = "formulaData"></div>
+        </div>
+    </div>
+    <div class="page-header descColor" ng-show ="showContent==true">
+        <span class="glyphicon glyphicon-info-sign"></span>
+        <!--计算结果仅供参考,数据来源<a href="" ng-click="open()">&lt&lt{{contentData}}&gt&gt</a>。-->
+        计算结果仅供参考，数据来源&lt&lt诉讼费用交纳办法&gt&gt
+    </div>
+        </div>
+</div>
+

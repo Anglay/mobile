@@ -1,0 +1,34 @@
+<!-- <div class="nav-right">
+	<a href="javascript:void(0)" class="nav-edite" id="nav-edite"></a>
+	<a href="javascript:void(0)" class="nav-user"><i></i></a>
+</div>
+<a class="btn_control open" href="javascript:void(0);"></a> -->
+<div class="nav">
+	<nav class="list">
+		<ul>
+			<li ms-repeat="menuList">
+				<a class="ch" ms-href="el.linkto">{{el.text}}</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+<script type="text/javascript">
+	$(function(){
+		/* header */
+		var nav = $(".nav");
+		$("#header").find('.btn_control').on('click', function(event) {
+
+			if ($(this).hasClass('close')) {
+				nav.animate({
+					left: 0 - nav.width()
+				}, 300);
+				$(this).removeClass('close').addClass('open');
+			} else {
+				nav.animate({
+					left: 0
+				}, 300);
+				$(this).removeClass('open').addClass('close');
+			}
+		});
+	});
+</script>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>实用工具</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<style type="text/css">
+		.am-accordion-gapped{
+			margin: 10px 0 0;
+		}
+		.am-accordion-gapped .am-accordion-item{
+			margin: 0 0 10px;
+			border-radius: 2px;
+			overflow: hidden;
+		}
+		.am-accordion-gapped .am-accordion-title,.am-accordion-gapped .am-active .am-accordion-title,.am-accordion-bd{
+			background-color: #fff;
+		}
+		.am-accordion-gapped .am-accordion-item,.am-accordion-gapped .am-accordion-item.am-active,.am-accordion-gapped .am-accordion-title{
+			border:none;
+		}
+		.am-accordion-gapped .am-accordion-item.am-active .am-accordion-title{
+			border-bottom: 1px solid #dedede;
+		}
+	</style>
+	<script src="../plug-in/amaze/js/jquery.min.js"></script>
+	<script src="../plug-in/amaze/js/amazeui.min.js"></script>
+	<script type="text/javascript" src="../plug-in/avalon/avalon.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="js/trademarkdetail.js"></script>
+</head>
+<body class="htmlbody" ms-controller="trademarkCtrl">
+	<header class="am-header am-header-default">
+		<div class="am-header-left am-header-nav">
+			<a href="javascript:LinkLawsCmn.goBack();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+		</div>
+		<h1 class="am-header-title">详细信息</h1>
+	</header>
+
+	<div class="am-container am-animation-fade">
+		<div class="am-container am-margin-top am-margin-bottom">
+			<div style="background:#fff;" class="am-radius am-padding-sm am-margin-bottom-sm">
+				<div class="am-g">
+					<div class="am-u-sm-12">
+						<h3 class="am-margin-bottom-sm">{{detail.tmName}}</h3>
+					</div>
+				</div>
+				<div class="am-g">
+					<div class="am-u-sm-12">
+						<img ms-attr-alt="detail.tmName" width="100%" ms-attr-src="http://www.tmkoo.com/pic.php?zch={{detail.tmImg}}">
+					</div>
+				</div>
+			</div>
+			<section class="am-accordion am-accordion-gapped am-no-layout" data-am-widget="accordion">
+				<dl class="am-accordion-item">
+					<dt class="am-accordion-title">商标基本信息</dt>
+					<dd class="am-accordion-bd am-collapse">
+						<div class="am-accordion-content">
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-5">注册号</div>
+								<div class="am-u-sm-7">{{detail.regNo}}</div>
+							</div>
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-5">国际分类</div>
+								<div class="am-u-sm-7">第{{detail.intCls}}类</div>
+							</div>
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-5">申请日期</div>
+								<div class="am-u-sm-7">{{detail.appDate}}</div>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl class="am-accordion-item">
+					<dt class="am-accordion-title">申请人信息</dt>
+					<dd class="am-accordion-bd am-collapse">
+						<div class="am-accordion-content">
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-6">申请人名称（中文）</div>
+								<div class="am-u-sm-6">{{detail.applicantCn}}</div>
+							</div>
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-6">申请人地址（中文）</div>
+								<div class="am-u-sm-6">{{detail.addressCn}}</div>
+							</div>
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-6">申请人身份证号</div>
+								<div class="am-u-sm-6">{{detail.idCardNo}}</div>
+							</div>
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-6">共有申请人1</div>
+								<div class="am-u-sm-6">{{detail.applicantOther1}}</div>
+							</div>
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-6">共有申请人1</div>
+								<div class="am-u-sm-6">{{detail.applicantOther2}}</div>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl class="am-accordion-item">
+					<dt class="am-accordion-title">商标注册信息</dt>
+					<dd class="am-accordion-bd am-collapse">
+						<div class="am-accordion-content">
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-4">初审公告期号</div>
+								<div class="am-u-sm-8">{{detail.announcementIssue}}</div>
+							</div>
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-4">注册公告期号</div>
+								<div class="am-u-sm-8">{{detail.regIssue}}</div>
+							</div>
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-4">专用权期限</div>
+								<div class="am-u-sm-8">{{detail.privateDate}}</div>
+							</div>
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-4">优先权日期</div>
+								<div class="am-u-sm-8">{{detail.yxqrq}}</div>
+							</div>
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-4">指定颜色</div>
+								<div class="am-u-sm-8">{{detail.color}}</div>
+							</div>
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-4">国际注册日期</div>
+								<div class="am-u-sm-8">{{detail.gjzcrq}}</div>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl class="am-accordion-item">
+					<dt class="am-accordion-title">代理机构详情</dt>
+					<dd class="am-accordion-bd am-collapse">
+						<div class="am-accordion-content">
+							<p>{{detail.announcementDate||'暂无信息'}}</p>
+						</div>
+					</dd>
+				</dl>
+				<dl class="am-accordion-item">
+					<dt class="am-accordion-title">使用商品</dt>
+					<dd class="am-accordion-bd am-collapse">
+						<div class="am-accordion-content" ms-if="detail.goods.length>0">
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-5">群组号</div>
+								<div class="am-u-sm-7">商品名称</div>
+							</div>
+							<div ms-repeat="detail.goods">
+								<div class="am-g am-margin-bottom-xs">
+									<div class="am-u-sm-5">{{el.goodsCode}}</div>
+									<div class="am-u-sm-7">{{el.goodsName}}</div>
+								</div>
+							</div>
+						</div>
+					</dd>
+				</dl>
+				<dl class="am-accordion-item">
+					<dt class="am-accordion-title">商标流程详情</dt>
+					<dd class="am-accordion-bd am-collapse">
+						<div class="am-accordion-content" ms-if="detail.flow.length>0">
+							<div class="am-g am-margin-bottom-xs">
+								<div class="am-u-sm-5">日期</div>
+								<div class="am-u-sm-7">状态</div>
+							</div>
+							<div ms-repeat="detail.flow">
+								<div class="am-g am-margin-bottom-xs">
+									<div class="am-u-sm-5">{{el.flowDate}}</div>
+									<div class="am-u-sm-7">{{el.flowName}}</div>
+								</div>
+							</div>
+						</div>
+					</dd>
+				</dl>
+			</section>
+		</div>
+	</div>
+</body>
+</html>

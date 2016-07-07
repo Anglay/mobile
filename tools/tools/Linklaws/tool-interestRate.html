@@ -1,0 +1,98 @@
+<header class="am-header am-header-default">
+    <div class="am-header-left am-header-nav">
+        <a href="javascript:history.back();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+    </div>
+    <h1 class="am-header-title">利息计算</h1>
+</header>
+<div class="container">
+    <div cg-busy="promise">
+        <div class="row">
+            <toaster-container toaster-options="{'time-out': 3000, 'close-button':false, 'animation-class': 'toast-top-center'}"></toaster-container>
+        </div>
+   <!--  <div class="row">
+
+        <div class="col-xs-12 center">
+            <h2 class="h2 center linkLawColor titleLable tool-title-interestRate linkLawColor">利息计算</h2>
+        </div>
+    </div> -->
+    <form name="myForm" novalidate>
+    <div class="row">
+        <div class="btn-group btn-group-justified btn-grp-interestRate" role="group" aria-label="">
+
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" ng-click="loanClicked()" ng-class="{true: 'btnOk', false: 'btnRest'}[isLoan]">贷款</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" ng-click="depositClicked()" ng-class="{true: 'btnOk', false: 'btnRest'}[isDeposit]">存款</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+            <div class="warp center">
+                <input type="text" name="amountValue" ng-pattern="/^[1-9]\d*$/" ng-model = "amountValue" class="form-control"  placeholder={{amountDesc}} required="{{amountDesc}}">
+            </div>
+
+            <div class="warp center">
+                <select class="form-control" ng-model = "depositTypeValue" ng-init="depositTypeValue = '0'" ng-show ="isDeposit == true">
+                    <option value="0">活期</option>
+                    <option value="1">定期</option>
+                </select>
+            </div>
+
+            <div class="warp ">
+                <label>起算日期</label>
+                <input type="date" class="form-control" ng-model="startDateValue" name="startDateValue" ng-change="startDateValueChange()" my-datepicker required>
+                <!--<my-datepicker type="text" ng-model="startDateValue" id="startDateValue" name="startDateValue"></my-datepicker>-->
+            </div>
+            <div class="warp ">
+                <label>截止日期</label>
+                <!--<my-datepicker type="text" ng-model="endDateValue" id="endDateValue" name="endDateValue"></my-datepicker>-->
+
+                <input type="date" class="form-control" ng-model="endDateValue" name="endDateValue" ng-change="endDateValueChange()" my-datepicker required>
+            </div>
+
+            <div class="warp">
+                <label>利率</label>
+
+                <select class="form-control" name="rateTypeValue" ng-model = "rateTypeValue" ng-change="rateTypeValueChanged()" required="请选择利率">
+                    <option value="">请选择利率</option>
+                    <option value="0">按基准利率</option>
+                    <option value="1">按分段基准利率</option>
+                    <option value="2">约定年利率</option>
+                    <option value="3">约定月利率</option>
+                    <option value="4">约定日利率</option>
+
+                </select>
+            </div>
+
+            <div class="warp">
+                <label>{{rateDesc}}</label>
+                <input type="number" min="1" ng-init ="rateValue=1" ng-model = "rateValue" name="rateValue" class="form-control"  placeholder="{{rateDesc}}" required="{{rateDesc}}">
+                <span style="font-weight: bold;color:#2ecc71;padding-top: 10px; ">{{rateValue}}{{(rateTypeValue == '1' ||rateTypeValue == '0' || rateTypeValue == '') ? '倍' : '%' }}</span>
+            </div>
+    </div>
+        <div class="row btnRow">
+            <div class=" col-xs-6">
+                <button type="button" ng-click="calc()" class="btn btn-success  btn-block btnOk">计算</button>
+            </div>
+            <div class=" col-xs-6">
+                <button type="button" ng-click="reset()" class="btn btn-default btn-block btnRest">重置</button>
+            </div>
+        </div>
+    </form>
+    <div class="row resultRow">
+        <div class=" col-xs-12 " ng-show ="showResult==true">
+            <h3 class="center linkLawColor">计算结果</h3>
+            <div  ng-bind-html = "resultData"></div>
+        </div>
+        <div class=" col-xs-12 " ng-show ="showFormula==true">
+            <h3 class="center linkLawColor">计算公式</h3>
+            <div ng-bind-html = "formulaData"></div>
+        </div>
+    </div>
+    <div class="page-header descColor" ng-show ="showContent==true">
+        <span class="glyphicon glyphicon-info-sign"></span>
+        计算结果仅供参考，数据来源&lt&lt央行基准利率表&gt&gt
+    </div>
+        </div>
+</div>

@@ -1,0 +1,108 @@
+<header class="am-header am-header-default">
+    <div class="am-header-left am-header-nav">
+        <a href="javascript:history.back();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+    </div>
+    <h1 class="am-header-title">交通事故赔偿</h1>
+</header>
+<div class="container">
+    <div cg-busy="promise">
+    <div class="row">
+        <toaster-container toaster-options="{'time-out': 3000, 'close-button':false, 'animation-class': 'toast-top-center'}"></toaster-container>
+    </div>
+    <!-- <div class="row">
+        <div class="col-xs-12 center">
+            <h2 class="h2 center linkLawColor titleLable tool-title-trafficAccident linkLawColor">交通事故赔偿</h2>
+        </div>
+    </div> -->
+    <form novalidate name="toolForm">
+
+    <div class="row">
+            <div class="warp">
+                <select class="form-control" name="provienceTypeValue" ng-model = "provienceTypeValue" ng-options="obj.provincename for obj in proviences" ng-change= "provienceTypeValueChanged()" required="请选择地区">
+                    <option value="">请选择地区</option>
+                </select>
+            </div>
+
+            <div class="warp center">
+                <select class="form-control" name="householdTypeValue" ng-model = "householdTypeValue" ng-options ="obj.dname for obj in householdTypes" ng-change="householdTypeValueChanged()" required="请选择户口类型">
+                    <option value="">请选择户口类型</option>
+                </select>
+            </div>
+
+            <div class="warp checkbox">
+                <label>
+                    <input type="checkbox" ng-model = "ckCanJi" ng-init ="ckCanJi = false" ng-change="ckCanJiChanged()" ng-disabled = "ckSiWang || ckSangZang"> 残疾赔偿金
+                </label>
+            </div>
+
+            <div class="warp center" ng-show="ckCanJi == true">
+                <select class="form-control" ng-model = "disabledLevelValue" ng-options ="obj.dname for obj in disabledLevels" name="disabledLevelValue" required="请选择伤残等级" ng-Required="ckCanJi">
+                    <option value="">请选择伤残等级</option>
+                </select>
+            </div>
+
+            <div class="warp" ng-show="ckCanJi == true">
+                <label>年龄</label>
+                <input type="number" name="cJAgeValue" ng-model = "ageValue" class="form-control"  min="1"  step="1" placeholder="请填写年龄" ng-Required="ckCanJi" required="请填写年龄">
+            </div>
+
+            <div class="warp checkbox">
+                <label>
+                    <input type="checkbox" ng-model = "ckSiWang" ng-init ="ckSiWang = false" ng-change= "ckSiWangChanged()"  ng-disabled = "ckCanJi"> 死亡赔偿金
+                </label>
+            </div>
+
+            <div class="warp " ng-show="ckSiWang == true">
+                <label>年龄</label>
+                <input type="number" name="ageValue" ng-model = "ageValue" class="form-control"  min="1"  step="1" placeholder="请填写年龄" ng-Required="ckSiWang" required="请填写年龄">
+            </div>
+
+            <div class="warp checkbox">
+                <label>
+                    <input type="checkbox" ng-model = "ckSangZang" ng-init ="ckSangZang = false" ng-disabled = "ckCanJi"> 丧葬费
+                </label>
+            </div>
+            <div class="warp checkbox">
+                <label>
+                    <input type="checkbox" ng-model = "ckWuGong" ng-init = "ckWuGong = false" ng-change = "ckWuGongChanged()"> 误工费
+                </label>
+            </div>
+            <div class="warp " ng-show="ckWuGong == true">
+                <label>误工月收入:元/月</label>
+                <input type="number" min="1" name="incomeValue" ng-model = "incomeValue" class="form-control"  placeholder="误工月收入：元/月" ng-Required="ckWuGong" required="误工月收入:元/月">
+            </div>
+            <div class="warp " ng-show="ckWuGong == true">
+                <label>误工时间:月</label>
+                <input type="number" min="1" name="periodValue" ng-model = "periodValue" class="form-control"  min="1"  step="1" placeholder="误工时间：月" ng-Required="ckWuGong" required="误工时间:月">
+            </div>
+
+            <div class="warp" ng-show="ckWuGong">
+                <span>有固定收入按实际收入;无固定收入按最近三年平均工资;否则按相同或相近行业上一年度平均工资标准;仍不能证明则按当地最低工资标准算。</span>
+            </div>
+    </div>
+
+    <div class="row btnRow">
+        <div class=" col-xs-6">
+            <button type="button" ng-click="calc()" class="btn btn-success btn-block btnOk">计算</button>
+        </div>
+        <div class=" col-xs-6">
+            <button type="button" ng-click="reset()" class="btn btn-default btn-block btnRest">重置</button>
+        </div>
+    </div>
+    </form>
+    <div class="row resultRow">
+        <div class=" col-xs-12" ng-show ="showResult==true">
+            <h3 class="center linkLawColor">计算结果</h3>
+            <div  ng-bind-html = "resultData"></div>
+        </div>
+        <div class=" col-xs-12" ng-show ="showFormula==true">
+            <h3 class="center linkLawColor">计算公式</h3>
+            <div ng-bind-html = "formulaData"></div>
+        </div>
+    </div>
+    <div class="page-header descColor" ng-show ="showContent==true">
+        <span class="glyphicon glyphicon-info-sign"></span>
+        计算结果仅供参考,数据来源<a href="" ng-click="open()"  data-animation="am-fade-and-scale" data-placement="center">&lt&lt{{contentData}}&gt&gt</a>。
+    </div>
+        </div>
+</div>

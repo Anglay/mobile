@@ -1,0 +1,227 @@
+
+/**
+ * 2015-11-24
+ * ouyang
+ */
+@charset "utf-8";
+html{
+	-webkit-tap-highlight-color:   transparent;
+	height: 100%;
+	min-width: 320px;
+	max-width: 640px;
+	overflow-x: hidden;
+	width: 100%;
+	margin:0 auto;
+
+}
+body{	
+	margin: 0 auto;
+    min-width: 320px;
+    max-width: 640px;
+    background: #f0f0f0;
+    font-size: 14px;
+    /* font-family: Helvetica,STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial; */
+    line-height: 1.5;;
+  	-webkit-user-select: none;
+  	user-select: none;
+}
+ul,li {
+	list-style: none;
+}
+/* border */
+.app-border-bottom{border-bottom: 1px solid #d8d8d8;}
+/* header */
+.am-header-default{
+	background-color: #40d16d;
+}
+.am-header .am-header-title{
+	margin:0 20%;
+    font-weight:bold;
+    font-size:16px;
+}
+/* fixed */
+.app-fixed{
+  position: fixed;
+  width: 100%;
+  bottom:10px;
+  text-align: center;
+  color: #a2a2a2;
+}
+
+/* button */
+.am-btn-default,.am-btn-default:hover,.am-btn-default:focus{
+	background-color: #40d16d;
+	color: #fff;
+}
+
+/* from */
+.am-input-group-label{
+	background-color: #fff;
+}
+.am-input-group-label i{
+	color: #40d16d;
+}
+.am-form select, 
+.am-form textarea, 
+.am-form input[type="text"], 
+.am-form input[type="password"], 
+.am-form input[type="datetime"], 
+.am-form input[type="datetime-local"], 
+.am-form input[type="date"], 
+.am-form input[type="month"], 
+.am-form input[type="time"], 
+.am-form input[type="week"], 
+.am-form input[type="number"], 
+.am-form input[type="email"], 
+.am-form input[type="url"], 
+.am-form input[type="search"], 
+.am-form input[type="tel"], 
+.am-form input[type="color"], 
+.am-form-field,
+.am-form select:focus, 
+.am-form textarea:focus, 
+.am-form input[type="text"]:focus, 
+.am-form input[type="password"]:focus, 
+.am-form input[type="datetime"]:focus, 
+.am-form input[type="datetime-local"]:focus, 
+.am-form input[type="date"]:focus, 
+.am-form input[type="month"]:focus, 
+.am-form input[type="time"]:focus, 
+.am-form input[type="week"]:focus, 
+.am-form input[type="number"]:focus, 
+.am-form input[type="email"]:focus, 
+.am-form input[type="url"]:focus, 
+.am-form input[type="search"]:focus, 
+.am-form input[type="tel"]:focus, 
+.am-form input[type="color"]:focus, 
+.am-form-field:focus{
+	border-color: #d8d8d8;
+}
+.am-btn-default,
+.am-btn-default:hover,
+.am-btn-default:focus{
+	border:3px solid #42D06C;
+};
+.am-btn-default[disabled]{
+	background-color:#a2a2a2;
+}
+.am-form-inline .am-form-group{
+  margin-bottom: 1.5rem;
+}
+.am-list>li>a{
+  padding:1.3rem 0;
+}
+.loadcontent{text-align: center;margin:20px auto;}
+
+/* arrow */
+.app-arr-right{position: relative;}
+.app-arr-right:after {
+    content:"";
+    display:block;   
+    width:1rem;   
+    height:1.8rem;   
+    background-image:url(../image/arrow-right.png);   
+    background-size:1rem 1.8rem;   
+    overflow:hidden;
+    position: absolute;
+    right: 0rem;
+    top: 30%;
+}
+.basecolor{color:#40d16d}
+.titlecolor{color: #303030;font-size: 16px; font-weight: bolder;}
+.deccolor{color: #a2a2a2}
+.choosecolor{color: #40d16d}
+
+.linklawsappfooter{  
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 999;
+  width: 100%; 
+  background: #fff;
+  border-top:1px solid #d8d8d8;
+}
+.linklawsappfooter .am-u-sm-4{
+  vertical-align: middle;
+  text-align: center;
+}
+.linklawsappfooter .footericon{
+    width: 25px;
+    height: 25px;
+    margin: 3px auto 2px auto;
+}
+
+.linklawsappfooter .footericon.icon1{
+  background: url('../image/lawer.svg') no-repeat;
+  text-align: center;
+}
+.linklawsappfooter .footactive .footericon.icon1{
+  background: url('../image/lawericon.svg') no-repeat;
+  text-align: center;
+}
+.linklawsappfooter .footericon.icon2{
+  background: url('../image/tools.svg') no-repeat;
+  text-align: center;
+}
+.linklawsappfooter .footactive .footericon.icon2{
+  background: url('../image/toolsicon.svg') no-repeat;
+  text-align: center;
+}
+.linklawsappfooter .footericon.icon3{
+  background: url('../image/person.svg') no-repeat;
+  text-align: center;
+}
+.linklawsappfooter .footactive .footericon.icon3{
+  background: url('../image/personicon.svg') no-repeat;
+  text-align: center;
+}
+.linklawsappfooter .footactive .footertitle{color: #42D06C;}
+.linklawsappfooter .footertitle{font-size: 14px;}
+
+/* icon */
+.am-icon-chevron-left ,.am-icon-search,.am-icon-search2{
+  height: 16px;
+  vertical-align: middle;
+  width: auto;
+}
+.am-icon-chevron-left:before{
+  content:"";   
+  display:block; 
+  width:16px;   
+  height:16px;   
+  background-image:url(../image/return.svg);   
+  background-size:16px 16px;   
+  overflow:hidden;
+}
+.am-icon-search::before{
+  content:"";   
+  display:block; 
+  width:16px;   
+  height:16px;   
+  background-image:url(../image/search.svg);   
+  background-size:16px 16px;   
+  overflow:hidden;
+}
+.am-icon-search2::before{
+  content:"";   
+  display:block; 
+  width:16px;   
+  height:16px;   
+  background-image:url(../image/search2.svg);   
+  background-size:16px 16px;   
+  overflow:hidden;
+}
+
+/* overlayer */
+.loading {
+    transform: translateZ(0px);
+    animation: 1.1s ease 0s normal none infinite running load5;
+    border-radius: 50%;
+    font-size: 25px;
+    height: 1em;
+    margin: 4em auto;
+    position: relative;
+    text-indent: -9999em;
+    width: 1em;
+}

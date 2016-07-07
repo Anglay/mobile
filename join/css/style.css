@@ -1,0 +1,186 @@
+@charset 'utf-8';
+.banner{
+    height: 250px;
+    padding-top: 150px;
+    background: url("../images/banner.jpg") no-repeat scroll center center / 100% 100%;
+    text-align: center;
+}
+.join-con{
+	height: auto;
+	overflow: hidden;
+	background: #fff;
+}
+.join-con h1{
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 15px;
+}
+.join-con>h2{
+    font-size: 20px;
+    text-align: center;
+    padding: 30px 15px;
+}
+.wraper{
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+}
+.wraper ul{
+    display: inline-block;
+    padding: 10px;
+    margin: 0 auto;
+    height: auto;
+    overflow: hidden;
+}
+.wraper ul li{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+}
+.wraper ul li a{
+    display: inline-block;
+    background: rgba(33, 184, 80, 0.8) none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+    vertical-align: middle;
+    font-size: 16px;
+}
+.wraper ul li a:hover{
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.wraper ul li a span{
+    display: inline-block;
+    width: 50%;
+    padding-top: 15px;
+    line-height: 25px;
+}
+.wraper-con{
+    height: 330px;
+    padding: 5px;
+    background: url("../images/companybg.jpg") no-repeat scroll 0 0;
+    background-size: cover;
+}
+.wraper-con div{
+    display: none;
+    padding: 15px;
+}
+.wraper-con div h2{
+    font-size: 20px;
+    color: #21b850;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+.wraper-con div p{
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 30px;
+}
+.wraper-con div:first-child{
+    display: block;
+}
+.sectiondec{
+    font-size: 16px;
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+.sectiondecinfo{
+    color: #21b850;
+    font-size: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+.sectiondecinfo span{
+    display: block;
+}
+.sectionnavtitle{
+    font-size: 30px;
+    margin: 10px 0 40px;
+    text-align: center;
+}
+.jobaccordion,.jobgroup{
+    height: auto;
+    overflow: hidden;
+}
+.jobaccordion{
+    margin-bottom: 100px;
+}
+.jobgroup .jobdeail{display: none;}
+.jobgroup a{
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+    height: 50px;
+    line-height: 50px;
+    padding:10px 0;
+    text-align: left;
+    overflow: hidden;
+    float: left;
+    background: #fff;
+}
+.jobgroup a span{
+    display: inline-block;
+    float: left;
+    font-size: 16px;
+}
+.jobgroup a span:first-child{
+    width:20%;
+    padding: 0 5%
+}
+.jobgroup a span:nth-child(2){
+    width: 35%;
+    padding: 0 5%
+}
+.jobgroup a span:last-child{
+    width:15%;
+    padding: 0 5%;
+    text-align:right;
+}
+.jobitem .jobicons {
+    background: url("../images/jobicons.png") no-repeat scroll 0 0;
+    display: inline-block;
+    height: 34px;
+    vertical-align: middle;
+    width: 34px;
+    background-position: 0 0px;
+}
+.jobitem:hover{
+    color: #21b850;
+}
+.jobitem:hover .jobicons{
+    background-position: 0 -44px;
+}
+.jobdeail{
+    background: #f2f2f2 none repeat scroll 0 0;
+    padding: 50px 0;
+    width: 80%;
+    padding: 10%;
+    clear: both;
+}
+.jobdeailcontent h3 {
+    font-size: 20px;
+    line-height: 35px;
+}
+.jobdeailcontent p{
+    font-size: 16px;
+    line-height: 35px;
+}
+.groupopen a span{
+    color: #21b850;
+}
+.groupopen .jobicons{
+    background-position: 0 -88px;
+}
+.groupopen .jobitem:hover .jobicons{
+    background-position: 0 -88px;
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html class="no-js">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-status-bar-style"	content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>享法科技-实用工具</title>
+	<link rel="stylesheet" type="text/css" href="../plug-in/amaze/css/amazeui.css">
+	<link rel="stylesheet" type="text/css" href="../css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="../plug-in/amaze/js/jquery.min.js"></script>
+	<script src="../plug-in/amaze/js/amazeui.min.js"></script>
+	<script type="text/javascript" src="../plug-in/avalon/avalon.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="./js/civilcasessublist.js"></script>
+</head>
+<body class="htmlbody" ms-controller="civilcasessublistCtrl">
+	<div class="fixed-header">
+		<header class="am-header am-header-default">
+			<div class="am-header-left am-header-nav">
+				<a href="javascript:LinkLawsCmn.goBack();"><i class="am-header-icon am-icon-chevron-left"></i></a>
+			</div>
+			<h1 class="am-header-title" ms-visible="title!=''">{{title}}</h1>
+		</header>
+	</div>
+	<div class="fixed-container">
+		<center ms-visible="isshow"><img src="image/loading.gif"></center>
+		<div class="app-hide" ms-visible="!isshow">
+			<div class="am-container am-margin-top-sm">
+				<ul class="am-list" ms-if="totalpages>0">
+					<li ms-repeat="civilcasessublistArr"><a ms-attr-href="commondetail.html?id={{el.id}}" class="app-arr-right am-text-truncate">{{el.casename}}</a></li>
+				</ul>
+				<button ms-if="totalpages>1&&page<totalpages" ms-click="loadData" class="am-btn am-btn-default am-btn-block am-margin-bottom load-btn">{{loadtext|html}}</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
